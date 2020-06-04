@@ -15,7 +15,7 @@ Install chocolatey (follow website)
 
 install all other software using chocolatey
 ```
-choco install microsoft-windows-terminal vim git putty vcxsrv filezilla virtualbox dbeaver gimp libreoffice advanced-ip-scanner grep less which 7zip wireshark free-download-manager vlc googlechrome --ignore-checksums -y
+choco install microsoft-windows-terminal vim git putty vcxsrv filezilla virtualbox dbeaver gimp libreoffice advanced-ip-scanner grep less which 7zip wireshark free-download-manager vlc googlechrome nodejs --ignore-checksums -y
 ```
 
 configure vim.
@@ -34,7 +34,13 @@ configure shortcut for putty puttygen pagent. (install from chocoletey add this 
 
 configure Xlaunch. then save the config to document folder. (xserver.xlaunch)
 
-
+configure chrome
+install extension
+  - vimmium c
+      - configure search to accept js regex
+  - dark reader
+      - configure dark reader shortcut to ctrl+shift+d
+  - js error notify
 
 configure windows terminal
 copy paste settings.json from repo windows-terminal
