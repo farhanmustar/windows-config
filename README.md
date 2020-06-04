@@ -1,3 +1,4 @@
+# Windows configuration guide
 Makesure all run in admin powershell
 
 Change Powershell tab completion behaviour
@@ -37,3 +38,12 @@ configure Xlaunch. then save the config to document folder. (xserver.xlaunch)
 
 configure windows terminal
 copy paste settings.json from repo windows-terminal
+
+
+# Not recommended
+optionally can configure git to use sshkey from putty. (but https should be good enough. git got save credential)
+  - note that thare is bug to add new server to known host in terminal. need to manually ssh using putty and accept in gui.
+Set env variable GIT_SSH to pagent.
+```
+GIT_SSH=C:\ProgramData\chocolatey\bin\PAGEANT.EXE
+```
