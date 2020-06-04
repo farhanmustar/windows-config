@@ -15,7 +15,7 @@ Install chocolatey (follow website)
 
 install all other software using chocolatey
 ```
-choco install microsoft-windows-terminal vim git putty vcxsrv filezilla virtualbox dbeaver gimp libreoffice advanced-ip-scanner grep less which 7zip wireshark free-download-manager vlc googlechrome nodejs --ignore-checksums -y
+choco install microsoft-windows-terminal vim git putty vcxsrv filezilla virtualbox dbeaver gimp libreoffice advanced-ip-scanner grep less which 7zip wireshark free-download-manager vlc googlechrome nodejs notepadplusplus --ignore-checksums -y
 ```
 
 configure vim.
