@@ -1,21 +1,33 @@
 # Windows configuration guide
 Makesure all run in admin powershell
 
+## Powershell Configuration
 Change Powershell tab completion behaviour
 Create new file at ```~/Documents/WindowsPowerShell/profile.ps1```
 ```
 Set-PSReadlineKeyHandler -Key Tab -Function Complete
 ```
-
 set scrip execution policy to remotesigned
 ```
 Set-ExecutionPolicy remotesigned
 ```
+
+## Chocolatey Package Manager
 Install chocolatey (follow website)
 
 install all other software using chocolatey
 ```
-choco install microsoft-windows-terminal vim git putty vcxsrv filezilla virtualbox dbeaver gimp libreoffice advanced-ip-scanner grep less which 7zip wireshark free-download-manager vlc googlechrome nodejs notepadplusplus --ignore-checksums -y
+choco install microsoft-windows-terminal vim git putty vcxsrv filezilla virtualbox dbeaver gimp libreoffice advanced-ip-scanner grep less which 7zip wireshark free-download-manager vlc googlechrome notepadplusplus --ignore-checksums -y
+```
+
+## Nodejs Development
+```
+choco install nodejs -y
+```
+
+## Arduino Development
+```
+choco install arduino -y
 ```
 
 configure vim.
