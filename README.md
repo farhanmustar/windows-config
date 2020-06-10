@@ -24,6 +24,9 @@ Alternatively instead of gimp, use krita
 ```
 choco install krita -y
 ```
+## Putty Configuration
+
+putty use register to store settings. Double click on ```./putty/putty.reg``` then accept importing the register.
 
 ## Nodejs Development
 ```
