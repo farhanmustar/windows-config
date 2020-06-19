@@ -17,7 +17,7 @@ Install chocolatey (follow website)
 
 install all other software using chocolatey
 ```
-choco install psutils microsoft-windows-terminal vim git putty vcxsrv filezilla virtualbox dbeaver gimp libreoffice advanced-ip-scanner grep less which 7zip wireshark free-download-manager vlc googlechrome notepadplusplus postman --ignore-checksums -y
+choco install psutils microsoft-windows-terminal vim git putty vcxsrv filezilla virtualbox dbeaver gimp inkscape libreoffice advanced-ip-scanner grep less which 7zip wireshark free-download-manager vlc googlechrome notepadplusplus postman --ignore-checksums -y
 ```
 
 Alternatively instead of gimp, use krita
