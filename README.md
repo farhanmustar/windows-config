@@ -38,6 +38,11 @@ choco install nodejs -y
 choco install arduino -y
 ```
 
+## PCB Circuit Design
+```
+choco install kicad -y
+```
+
 configure vim.
 pull from dotfiles url(TODO: put url here)
 install vundle (sometimes it not copy to correct file instead it create ~ folder why!!!)
