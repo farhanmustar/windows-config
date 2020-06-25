@@ -17,13 +17,14 @@ Install chocolatey (follow website)
 
 install all other software using chocolatey
 ```
-choco install psutils microsoft-windows-terminal vim git putty vcxsrv filezilla virtualbox dbeaver gimp inkscape libreoffice advanced-ip-scanner grep less which 7zip wireshark free-download-manager vlc googlechrome notepadplusplus postman --ignore-checksums -y
+choco install psutils microsoft-windows-terminal vim git putty vcxsrv filezilla virtualbox dbeaver paint.net inkscape libreoffice advanced-ip-scanner grep less which 7zip wireshark free-download-manager vlc googlechrome notepadplusplus postman --ignore-checksums -y
 ```
 
-Alternatively instead of gimp, use krita
+Alternatively can use gimp instead of paint.net
 ```
-choco install krita -y
+choco install gimp -y
 ```
+
 ## Putty Configuration
 
 putty use register to store settings. Double click on ```./putty/putty.reg``` then accept importing the register.
