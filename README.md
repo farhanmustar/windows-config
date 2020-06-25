@@ -17,12 +17,20 @@ Install chocolatey (follow website)
 
 install all other software using chocolatey
 ```
-choco install psutils microsoft-windows-terminal vim git putty vcxsrv filezilla virtualbox dbeaver paint.net inkscape libreoffice advanced-ip-scanner grep less which 7zip wireshark free-download-manager vlc googlechrome notepadplusplus postman --ignore-checksums -y
+choco install psutils microsoft-windows-terminal vim git putty vcxsrv filezilla virtualbox dbeaver paint.net inkscape libreoffice advanced-ip-scanner grep less which 7zip wireshark free-download-manager vlc googlechrome notepadplusplus postman watchexec --ignore-checksums -y
 ```
 
-Alternatively can use gimp instead of paint.net
+### Alternatively can use gimp instead of paint.net
 ```
 choco install gimp -y
+```
+
+### Note on watchexec.
+For now there is no watch replacement in windows.
+watchexec is almost similar but only execute command if got fie change.
+Exemple: execute ```node index.js``` if got file change in current directory.
+```
+watchexec -- node .\index.js
 ```
 
 ## Putty Configuration
@@ -40,18 +48,19 @@ choco install arduino -y
 ```
 
 ## PCB Circuit Design
+Download easyeda manually, for now no package on chocolatey.
 ```
 choco install kicad -y
 ```
 
-configure vim.
+## Configure VIM.
 pull from dotfiles url(TODO: put url here)
 install vundle (sometimes it not copy to correct file instead it create ~ folder why!!!)
 ```
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 
-configure putty
+## Configure Putty
 keybord xterm
 allow agent forwarding
 allow x11 forwarding
@@ -60,7 +69,7 @@ configure shortcut for putty puttygen pagent. (install from chocoletey add this 
 
 configure Xlaunch. then save the config to document folder. (xserver.xlaunch)
 
-configure chrome
+## Configure Chrome
 install extension
   - vimmium c
       - configure search to accept js regex
