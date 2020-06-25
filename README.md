@@ -52,6 +52,11 @@ Download easyeda manually, for now no package on chocolatey.
 ```
 choco install kicad -y
 ```
+Build in board should be enough, But if required can try to search at [snapeda.com](https://www.snapeda.com/kicad/).
+Maybe add other library:-
+[SparkFun](https://github.com/sparkfun/SparkFun-KiCad-Libraries.git)
+[Digi-Key](https://github.com/Digi-Key/digikey-kicad-library.git)
+
 
 ## Configure VIM.
 pull from dotfiles url(TODO: put url here)
