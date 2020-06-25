@@ -33,6 +33,13 @@ Exemple: execute ```node index.js``` if got file change in current directory.
 watchexec -- node .\index.js
 ```
 
+### Note on sudo.
+```sudo``` keyword is available after installing psutils, which is included in above install command.
+Users can now install using chocolatey without admin enabled powershell as shown below.
+```
+sudo choco install <software_name>
+```
+
 ## Putty Configuration
 
 putty use register to store settings. Double click on ```./putty/putty.reg``` then accept importing the register.
