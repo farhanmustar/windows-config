@@ -17,7 +17,7 @@ Install chocolatey (follow website)
 
 install all other software using chocolatey
 ```
-choco install psutils microsoft-windows-terminal vim git putty vcxsrv filezilla virtualbox dbeaver paint.net inkscape libreoffice advanced-ip-scanner grep less which 7zip wireshark free-download-manager vlc googlechrome notepadplusplus postman watchexec --ignore-checksums -y
+choco install psutils microsoft-windows-terminal vim git putty vcxsrv filezilla virtualbox dbeaver paint.net inkscape libreoffice advanced-ip-scanner grep less which 7zip wireshark free-download-manager vlc googlechrome notepadplusplus postman watchexec powershell-core --install-arguments='"ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1"' --params "/NoGuiHereIntegration /NoShellHereIntegration" --ignore-checksums -y
 ```
 
 ### Alternatively can use gimp instead of paint.net
@@ -32,6 +32,7 @@ Exemple: execute ```node index.js``` if got file change in current directory.
 ```
 watchexec -- node .\index.js
 ```
+TIPS: for nodejs use ```console.clear()``` inside index.js to clear console log before print new stuff.
 
 ### Note on sudo.
 ```sudo``` keyword is available after installing psutils, which is included in above install command.
@@ -51,7 +52,7 @@ choco install nodejs -y
 
 ## Arduino Development
 ```
-choco install arduino -y
+choco install arduino arduino-cli -y
 ```
 
 ## PCB Circuit Design
