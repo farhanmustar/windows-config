@@ -1,9 +1,9 @@
 # Windows configuration guide
 Makesure all run in admin powershell
 
-## Powershell Configuration
+## Powershell Core Configuration
 Change Powershell tab completion behaviour
-Create new file at ```~/Documents/WindowsPowerShell/profile.ps1```
+Create new file at ```~/Documents/PowerShell/profile.ps1```
 ```
 Set-PSReadlineKeyHandler -Key Tab -Function Complete
 ```
@@ -90,8 +90,8 @@ install extension
       - configure dark reader shortcut to ctrl+shift+d
   - js error notify
 
-configure windows terminal
-copy paste settings.json from repo windows-terminal
+## Configure Windows Terminal
+copy paste settings from ```./windows-terminal/settings.json``` to terminal settings.
 
 
 # Not recommended
