@@ -17,7 +17,7 @@ Install chocolatey (follow website)
 
 install all other software using chocolatey
 ```
-choco install psutils microsoft-windows-terminal vim git putty vcxsrv filezilla virtualbox dbeaver paint.net inkscape libreoffice advanced-ip-scanner grep less which 7zip wireshark free-download-manager vlc googlechrome notepadplusplus postman watchexec powershell-core --install-arguments='"ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1"' --params "/NoGuiHereIntegration /NoShellHereIntegration" --ignore-checksums -y
+choco install psutils microsoft-windows-terminal vim git putty.install vcxsrv filezilla virtualbox dbeaver paint.net inkscape libreoffice advanced-ip-scanner grep less which 7zip wireshark free-download-manager vlc googlechrome notepadplusplus postman watchexec powershell-core --install-arguments='"ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1"' --params "/NoGuiHereIntegration /NoShellHereIntegration" --ignore-checksums -y
 ```
 
 ### Alternatively can use gimp instead of paint.net
@@ -41,9 +41,36 @@ Users can now install using chocolatey without admin enabled powershell as shown
 sudo choco install <software_name>
 ```
 
-## Putty Configuration
-
+## Configure Putty
 putty use register to store settings. Double click on ```./putty/putty.reg``` then accept importing the register.
+
+configure shortcut for pagent to pass private key,   
+just add path of the key in quote after the pagent url.
+
+configure Xlaunch. then save the config to document folder. (xserver.xlaunch)
+
+## Configure VIM.
+pull from dotfiles url(TODO: put url here)
+install vundle (sometimes it not copy to correct file instead it create ~ folder why!!!)
+```
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
+
+## Configure Chrome
+install extension
+  - vimmium c
+      - configure search to accept js regex
+  - dark reader
+      - configure dark reader shortcut to ctrl+shift+d
+  - js error notify
+
+## Configure Windows Terminal
+copy paste settings from ```./windows-terminal/settings.json``` to terminal settings.
+
+## Openssl Tools
+```
+choco install openssl openssl-wizard -y
+```
 
 ## Nodejs Development
 ```
@@ -64,34 +91,6 @@ Build in board should be enough, But if required can try to search at [snapeda.c
 Maybe add other library:-
 [SparkFun](https://github.com/sparkfun/SparkFun-KiCad-Libraries.git)
 [Digi-Key](https://github.com/Digi-Key/digikey-kicad-library.git)
-
-
-## Configure VIM.
-pull from dotfiles url(TODO: put url here)
-install vundle (sometimes it not copy to correct file instead it create ~ folder why!!!)
-```
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-```
-
-## Configure Putty
-keybord xterm
-allow agent forwarding
-allow x11 forwarding
-
-configure shortcut for putty puttygen pagent. (install from chocoletey add this at programdata/chocolatey/bin.)
-
-configure Xlaunch. then save the config to document folder. (xserver.xlaunch)
-
-## Configure Chrome
-install extension
-  - vimmium c
-      - configure search to accept js regex
-  - dark reader
-      - configure dark reader shortcut to ctrl+shift+d
-  - js error notify
-
-## Configure Windows Terminal
-copy paste settings from ```./windows-terminal/settings.json``` to terminal settings.
 
 
 # Not recommended
