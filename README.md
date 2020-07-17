@@ -17,7 +17,7 @@ Install chocolatey (follow website)
 
 install all other software using chocolatey
 ```
-choco install googlechrome psutils microsoft-windows-terminal vim git putty.install vcxsrv filezilla virtualbox dbeaver paint.net inkscape libreoffice advanced-ip-scanner grep less which 7zip wireshark free-download-manager vlc notepadplusplus postman watchexec powershell-core --install-arguments='"ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1"' --params "/NoGuiHereIntegration /NoShellHereIntegration /ExtensionPack" --ignore-checksums -y
+choco install googlechrome psutils microsoft-windows-terminal vim git putty.install vcxsrv filezilla virtualbox dbeaver paint.net inkscape libreoffice advanced-ip-scanner grep less which 7zip wireshark free-download-manager vlc notepadplusplus postman watchexec powershell-core hwmonitor --install-arguments='"ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1"' --params "/NoGuiHereIntegration /NoShellHereIntegration /ExtensionPack" --ignore-checksums -y
 ```
 
 ### Alternatively can use gimp instead of paint.net
@@ -76,6 +76,15 @@ choco install openssl openssl-wizard -y
 ## Nodejs Development
 ```
 choco install nodejs -y
+```
+
+## Python 2.x Development
+```
+choco install python2 -y
+```
+then install pip by running(note: run ```refreshenv```) to use python immediately
+```
+python -m pip
 ```
 
 ## Arduino Development
