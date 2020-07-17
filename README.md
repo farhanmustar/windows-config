@@ -17,7 +17,7 @@ Install chocolatey (follow website)
 
 install all other software using chocolatey
 ```
-choco install googlechrome psutils microsoft-windows-terminal vim git putty.install vcxsrv filezilla virtualbox dbeaver paint.net inkscape libreoffice advanced-ip-scanner grep less which 7zip wireshark free-download-manager vlc notepadplusplus postman watchexec powershell-core hwmonitor --install-arguments='"ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1"' --params "/NoGuiHereIntegration /NoShellHereIntegration /ExtensionPack" --ignore-checksums -y
+choco install googlechrome psutils microsoft-windows-terminal vim git putty.install vcxsrv filezilla virtualbox dbeaver paint.net inkscape libreoffice advanced-ip-scanner grep less which wget 7zip wireshark free-download-manager vlc notepadplusplus postman watchexec powershell-core hwmonitor --install-arguments='"ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1"' --params "/NoGuiHereIntegration /NoShellHereIntegration /ExtensionPack" --ignore-checksums -y
 ```
 
 ### Alternatively can use gimp instead of paint.net
@@ -82,7 +82,14 @@ choco install nodejs -y
 ```
 choco install python2 -y
 ```
-then install pip by running(note: run ```refreshenv```) to use python immediately
+
+remove python exe file in following directory (note: use admin console. it is link file)
+windows did that to auto start windows store when use python keyword.why!!!
+```
+C:\Users\farha\AppData\Local\Microsoft\WindowsApps
+```
+
+then install pip by running(note: restart terminal to use python)
 ```
 python -m pip
 ```
