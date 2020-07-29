@@ -99,6 +99,7 @@ python -m pip
 choco install arduino arduino-cli -y
 ```
 
+
 ## PCB Circuit Design
 Download easyeda manually, for now no package on chocolatey.
 ```
@@ -109,6 +110,11 @@ Maybe add other library:-
 [SparkFun](https://github.com/sparkfun/SparkFun-KiCad-Libraries.git)
 [Digi-Key](https://github.com/Digi-Key/digikey-kicad-library.git)
 
+
+## PC Gaming
+```
+choco install origin steam epicgameslauncher -y
+```
 
 # Not recommended
 optionally can configure git to use sshkey from putty. (but https should be good enough. git got save credential)
