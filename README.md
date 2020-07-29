@@ -113,7 +113,7 @@ Maybe add other library:-
 
 ## PC Gaming
 ```
-choco install origin steam epicgameslauncher -y
+choco install origin steam epicgameslauncher ds4windows -y
 ```
 
 # Not recommended
