@@ -109,6 +109,12 @@ python -m pip
 choco install arduino arduino-cli -y
 ```
 
+## PlatformIO Development
+Need to use pip to install only. Refer to python section to install pip.
+```
+pip install platformio
+```
+
 
 ## PCB Circuit Design
 Download easyeda manually, for now no package on chocolatey.
