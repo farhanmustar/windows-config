@@ -139,3 +139,11 @@ Set env variable GIT_SSH to pagent.
 ```
 GIT_SSH=C:\ProgramData\chocolatey\bin\PAGEANT.EXE
 ```
+
+# TODO
+
+## Explore Powershell Galery
+Powershell got its own build in module manager. Need to explore, as for now the package available is very limited.
+```
+https://www.powershellgallery.com/packages
+```
