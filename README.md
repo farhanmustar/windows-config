@@ -115,7 +115,6 @@ Need to use pip to install only. Refer to python section to install pip.
 pip install platformio
 ```
 
-
 ## PCB Circuit Design
 Download easyeda manually, for now no package on chocolatey.
 ```
@@ -125,7 +124,6 @@ Build in board should be enough, But if required can try to search at [snapeda.c
 Maybe add other library:-
 [SparkFun](https://github.com/sparkfun/SparkFun-KiCad-Libraries.git)
 [Digi-Key](https://github.com/Digi-Key/digikey-kicad-library.git)
-
 
 ## PC Gaming
 ```
@@ -146,4 +144,10 @@ GIT_SSH=C:\ProgramData\chocolatey\bin\PAGEANT.EXE
 Powershell got its own build in module manager. Need to explore, as for now the package available is very limited.
 ```
 https://www.powershellgallery.com/packages
+```
+
+## Explore Windows Package Manager
+Windows package manager.
+```
+https://docs.microsoft.com/en-gb/windows/package-manager/
 ```
