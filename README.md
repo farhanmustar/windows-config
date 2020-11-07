@@ -17,7 +17,7 @@ Install chocolatey from [chocolatey.org](https://chocolatey.org/install).
 
 install all other software using chocolatey
 ```
-choco install googlechrome psutils microsoft-windows-terminal vim git putty.install vcxsrv filezilla virtualbox dbeaver paint.net inkscape libreoffice advanced-ip-scanner grep less which wget 7zip wireshark free-download-manager vlc notepadplusplus postman watchexec powershell-core cpu-z hwmonitor --install-arguments='"ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1"' --params "/NoGuiHereIntegration /NoShellHereIntegration /ExtensionPack" --ignore-checksums -y
+choco install googlechrome psutils microsoft-windows-terminal vim git putty.install vcxsrv filezilla virtualbox dbeaver paint.net inkscape libreoffice advanced-ip-scanner grep less which wget 7zip rsync wireshark free-download-manager vlc notepadplusplus postman watchexec powershell-core cpu-z hwmonitor --install-arguments='"ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1"' --params "/NoGuiHereIntegration /NoShellHereIntegration /ExtensionPack" --ignore-checksums -y
 ```
 
 ### Alternatively can use gimp instead of paint.net
