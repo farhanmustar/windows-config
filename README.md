@@ -50,10 +50,10 @@ just add path of the key in quote after the pagent url.
 configure Xlaunch. then save the config to document folder. (xserver.xlaunch)
 
 ## Configure VIM.
-pull from dotfiles url(https://gitlab.com/devomatlab/configurations/dotfiles.git)
-install vundle (sometimes it not copy to correct file instead it create ~ folder why!!!)
+Clone dotfiles repo at https://github.com/farhanmustar/dotfiles.git.
+Run vim and run ```:PluginInstall``` to install all plugins.
 ```
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+git clone https://github.com/farhanmustar/dotfiles.git
 ```
 
 ## Configure Chrome
@@ -92,11 +92,6 @@ remove python exe file in following directory (note: use admin console. it is li
 windows did that to auto start windows store when use python keyword.why!!!
 ```
 C:\Users\farha\AppData\Local\Microsoft\WindowsApps
-```
-
-then install pip by running(note: restart terminal to use python)
-```
-python -m pip
 ```
 
 ## Arduino Development
