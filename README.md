@@ -120,6 +120,11 @@ Maybe add other library:-
 choco install origin steam epicgameslauncher ds4windows -y
 ```
 
+## Audio editing
+```
+choco install audacity -y
+```
+
 ## Hard Disk Health Monitor and Benchmark Tools
 ```
 choco install crystaldiskmark crystaldiskinfo -y
@@ -145,4 +150,12 @@ https://www.powershellgallery.com/packages
 Windows package manager.
 ```
 https://docs.microsoft.com/en-gb/windows/package-manager/
+```
+
+## Explore scoop
+need to compare first. or use both.
+Install
+```
+iwr -useb get.scoop.sh | iex
+scoop bucket add extras
 ```
