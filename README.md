@@ -125,6 +125,11 @@ choco install origin steam epicgameslauncher ds4windows -y
 choco install audacity -y
 ```
 
+## Video editing
+```
+choco install kdenlive -y
+```
+
 ## Hard Disk Health Monitor and Benchmark Tools
 ```
 choco install crystaldiskmark crystaldiskinfo -y
