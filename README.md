@@ -82,6 +82,10 @@ choco install androidstudio -y
 ```
 choco install nodejs -y
 ```
+Help install basic tools used to build pkg manually.
+```
+sudo npm install -g windows-build-tools
+```
 
 ## Python 2.x Development
 ```
@@ -135,8 +139,9 @@ choco install kdenlive -y
 choco install crystaldiskmark crystaldiskinfo -y
 ```
 
-# Not recommended
-optionally can configure git to use sshkey from putty. (but https should be good enough. git got save credential)
+# Optional Setup
+## Use paegent for ssh auth.
+optionally can configure git to use sshkey from putty. (but https should be good enough. git use windows credential manager)
   - note that thare is bug to add new server to known host in terminal. need to manually ssh using putty and accept in gui.
 Set env variable GIT_SSH to pagent.
 ```
