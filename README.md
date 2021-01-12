@@ -12,10 +12,31 @@ Set-ExecutionPolicy remotesigned
 
 ## Chocolatey Package Manager
 Install chocolatey from [chocolatey.org](https://chocolatey.org/install).
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+```
 
 install all other software using chocolatey
-```
-choco install googlechrome psutils get-childitemcolor microsoft-windows-terminal vim universal-ctags git putty.install vcxsrv filezilla virtualbox dbeaver paint.net inkscape libreoffice advanced-ip-scanner grep less which wget 7zip rsync wireshark free-download-manager vlc notepadplusplus postman watchexec powershell-core cpu-z hwmonitor --install-arguments='"ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1"' --params "/NoGuiHereIntegration /NoShellHereIntegration /ExtensionPack" --ignore-checksums -y
+```powershell
+choco install `
+googlechrome postman `
+free-download-manager `
+psutils get-childitemcolor `
+powershell-core `
+microsoft-windows-terminal `
+vim universal-ctags git `
+grep less which wget rsync watchexec `
+virtualbox `
+putty.install vcxsrv `
+filezilla dbeaver 7zip `
+advanced-ip-scanner wireshark `
+libreoffice notepadplusplus `
+paint.net inkscape `
+vlc `
+cpu-z hwmonitor `
+--install-arguments='"ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1"' `
+--params "/NoGuiHereIntegration /NoShellHereIntegration /ExtensionPack" `
+--ignore-checksums -y
 ```
 
 ### Alternatively can use gimp instead of paint.net
@@ -25,15 +46,15 @@ choco install gimp -y
 
 ### Note on watchexec.
 For now there is no watch replacement in windows.
-watchexec is almost similar but only execute command if got fie change.
-Exemple: execute ```node index.js``` if got file change in current directory.
+watchexec is almost similar to watch, but only execute command if got file change.
+Exemple: execute ```node index.js``` if file change in current directory.
 ```
 watchexec -- node .\index.js
 ```
 TIPS: for nodejs use ```console.clear()``` inside index.js to clear console log before print new stuff.
 
 ### Note on sudo.
-```sudo``` keyword is available after installing psutils, which is included in above install command.
+```sudo``` keyword is available after installing psutils, which is included in the above install command.
 Users can now install using chocolatey without admin enabled powershell as shown below.
 ```
 sudo choco install <software_name>
