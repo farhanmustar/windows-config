@@ -1,12 +1,10 @@
 # Windows configuration guide
-Makesure all run in admin powershell
+Make sure all run in admin powershell
 
 ## Powershell Core Configuration
-Change Powershell tab completion behaviour
-Create new file at ```~/Documents/PowerShell/profile.ps1```
-```
-Set-PSReadlineKeyHandler -Key Tab -Function Complete
-```
+Change Powershell tab completion behaviour and set ```ls``` alias to get-childitemcolorformatwide
+copy ```./Documents/PowerShell/profile.ps1``` to ```~/Documents/PowerShell/profile.ps1```
+
 set scrip execution policy to remotesigned
 ```
 Set-ExecutionPolicy remotesigned
@@ -17,7 +15,7 @@ Install chocolatey from [chocolatey.org](https://chocolatey.org/install).
 
 install all other software using chocolatey
 ```
-choco install googlechrome psutils microsoft-windows-terminal vim universal-ctags git putty.install vcxsrv filezilla virtualbox dbeaver paint.net inkscape libreoffice advanced-ip-scanner grep less which wget 7zip rsync wireshark free-download-manager vlc notepadplusplus postman watchexec powershell-core cpu-z hwmonitor --install-arguments='"ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1"' --params "/NoGuiHereIntegration /NoShellHereIntegration /ExtensionPack" --ignore-checksums -y
+choco install googlechrome psutils get-childitemcolor microsoft-windows-terminal vim universal-ctags git putty.install vcxsrv filezilla virtualbox dbeaver paint.net inkscape libreoffice advanced-ip-scanner grep less which wget 7zip rsync wireshark free-download-manager vlc notepadplusplus postman watchexec powershell-core cpu-z hwmonitor --install-arguments='"ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1"' --params "/NoGuiHereIntegration /NoShellHereIntegration /ExtensionPack" --ignore-checksums -y
 ```
 
 ### Alternatively can use gimp instead of paint.net
