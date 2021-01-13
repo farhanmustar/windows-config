@@ -2,7 +2,8 @@
 Make sure all run in admin powershell
 
 ## Powershell Core Configuration
-Change Powershell tab completion behaviour and set ```ls``` alias to get-childitemcolorformatwide
+Change Powershell tab completion behaviour and set ```ls``` alias to ```get-childitemcolorformatwide```
+
 copy ```./Documents/PowerShell/profile.ps1``` to ```~/Documents/PowerShell/profile.ps1```
 
 set scrip execution policy to remotesigned
@@ -40,11 +41,11 @@ cpu-z hwmonitor `
 ```
 
 ### Alternatively can use gimp instead of paint.net
-```
+```powershell
 choco install gimp -y
 ```
 
-### Note on watchexec.
+### Note on watchexec
 For now there is no watch replacement in windows.
 watchexec is almost similar to watch, but only execute command if got file change.
 Exemple: execute ```node index.js``` if file change in current directory.
@@ -53,10 +54,10 @@ watchexec -- node .\index.js
 ```
 TIPS: for nodejs use ```console.clear()``` inside index.js to clear console log before print new stuff.
 
-### Note on sudo.
+### Note on sudo
 ```sudo``` keyword is available after installing psutils, which is included in the above install command.
 Users can now install using chocolatey without admin enabled powershell as shown below.
-```
+```powershell
 sudo choco install <software_name>
 ```
 
@@ -68,14 +69,14 @@ just add path of the key in quote after the pagent url.
 
 configure Xlaunch. then save the config to document folder. (xserver.xlaunch)
 
-## Configure VIM.
+## Configure Vim
 Clone dotfiles repo at https://github.com/farhanmustar/dotfiles.git.
 Run vim and run ```:PluginInstall``` to install all plugins.
 ```
 git clone https://github.com/farhanmustar/dotfiles.git
 ```
 
-## Configure keyboard mapping.
+## Configure Keyboard Mapping
 To remap ```caps_lock``` key to ```esc``` key and ```scroll_lock``` key to ```caps_lock``` key. 
   - Double click ```keyboard_remap/remap_caps_lock_to_escape_scroll_lock_to_caps_lock.reg``` and accept importing the register
 
@@ -95,26 +96,26 @@ install extension
 copy paste settings from ```./windows-terminal/settings.json``` to terminal settings.
 
 ## Openssl Tools
-```
+```powershell
 choco install openssl openssl-wizard -y
 ```
 
 ## Android  Development
-```
+```powershell
 choco install androidstudio -y
 ```
 
 ## Nodejs Development
-```
+```powershell
 choco install nodejs -y
 ```
-Help install basic tools used to build pkg manually.
-```
+basic tools used to build pkg manually.
+```powershell
 sudo npm install -g windows-build-tools
 ```
 
 ## Python 2.x Development
-```
+```powershell
 choco install python2 -y
 ```
 
@@ -125,7 +126,7 @@ C:\Users\farha\AppData\Local\Microsoft\WindowsApps
 ```
 
 ## Arduino Development
-```
+```powershell
 choco install arduino arduino-cli -y
 ```
 
@@ -137,7 +138,7 @@ pip install platformio
 
 ## PCB Circuit Design
 Download easyeda manually, for now no package on chocolatey.
-```
+```powershell
 choco install kicad -y
 ```
 Build in board should be enough, But if required can try to search at [snapeda.com](https://www.snapeda.com/kicad/).
@@ -146,27 +147,27 @@ Maybe add other library:-
 [Digi-Key](https://github.com/Digi-Key/digikey-kicad-library.git)
 
 ## PC Gaming
-```
+```powershell
 choco install origin steam epicgameslauncher ds4windows -y
 ```
 
 ## Audio editing
-```
+```powershell
 choco install audacity -y
 ```
 
 ## Video editing
-```
+```powershell
 choco install kdenlive -y
 ```
 
 ## Hard Disk Health Monitor and Benchmark Tools
-```
+```powershell
 choco install crystaldiskmark crystaldiskinfo -y
 ```
 
 # Optional Setup
-## Use paegent for ssh auth.
+## Use paegent for ssh auth
 optionally can configure git to use sshkey from putty. (but https should be good enough. git use windows credential manager)
   - note that thare is bug to add new server to known host in terminal. need to manually ssh using putty and accept in gui.
 Set env variable GIT_SSH to pagent.

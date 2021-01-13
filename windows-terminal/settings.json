@@ -11,7 +11,7 @@
   "profiles": {
     "defaults": {
       // Put settings here that you want to apply to all profiles
-      "fontSize": 10
+      "fontSize": 9
     },
     "list": [{
         "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
@@ -115,10 +115,8 @@
       "keys": ["Ctrl+Shift+j"]
     },
     {
-      "command": {
-        "action": "closePane"
-      },
-      "keys": ["Ctrl+d"]
+      "command": {},
+      "keys": ["Ctrl+Shift+6"]
     }
   ]
 }
