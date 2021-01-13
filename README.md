@@ -75,6 +75,13 @@ Run vim and run ```:PluginInstall``` to install all plugins.
 git clone https://github.com/farhanmustar/dotfiles.git
 ```
 
+## Configure keyboard mapping.
+To remap ```caps_lock``` key to ```esc``` key and ```scroll_lock``` key to ```caps_lock``` key. 
+  - Double click ```keyboard_remap/remap_caps_lock_to_escape_scroll_lock_to_caps_lock.reg``` and accept importing the register
+
+To restore back the keyboard layout maping to default value
+  - Double click ```keyboard_remap/default_keyboard_remap.reg``` and accept importing the register
+
 ## Configure Chrome
 install extension
   - vimmium c
