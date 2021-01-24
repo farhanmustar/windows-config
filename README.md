@@ -151,12 +151,19 @@ Maybe add other library:-
 choco install origin steam epicgameslauncher ds4windows -y
 ```
 
-## Audio editing
+## Media Software
+
+### Webcam and Screen Recording
+```powershell
+choco install obs-studio -y
+```
+
+### Audio Editing
 ```powershell
 choco install audacity -y
 ```
 
-## Video editing
+### Video Editing
 ```powershell
 choco install kdenlive -y
 ```
