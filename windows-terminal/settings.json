@@ -19,7 +19,8 @@
         "name": "PowerShell",
         "source": "Windows.Terminal.PowershellCore",
         "cursorShape": "filledBox",
-        "startingDirectory": "%USERPROFILE%"
+        "startingDirectory": "%USERPROFILE%",
+        "colorScheme": "PaperColor"
       },
       {
         // Make changes here to the powershell.exe profile
@@ -27,7 +28,7 @@
         "name": "Windows PowerShell",
         "commandline": "powershell.exe",
         "hidden": false,
-        "colorscheme": "One Half Dark",
+        "colorScheme": "One Half Dark",
         "cursorShape": "filledBox",
         "startingDirectory": "%USERPROFILE%"
       },
@@ -48,7 +49,29 @@
   },
 
   // Add custom color schemes to this array
-  "schemes": [],
+  "schemes": [
+	  {
+		  "name": "PaperColor",
+		  "foreground": "#d0d0d0",
+		  "background": "#1c1c1c",
+		  "black": "#1c1c1c",
+		  "red": "#af005f",
+		  "green": "#5faf00",
+		  "yellow":"#d7af5f",
+		  "blue": "#5fafd7",
+		  "purple": "#808080",
+		  "cyan": "#d7875f",
+		  "white": "#d0d0d0",
+		  "brightBlack": "#585858",
+		  "brightRed": "#5faf5f",
+		  "brightGreen": "#afd700",
+		  "brightYellow": "#af87d7",
+		  "brightBlue": "#ffaf00",
+		  "brightPurple": "#ff5faf",
+		  "brightCyan": "#00afaf",
+		  "brightWhite": "#5f8787"
+	  }
+  ],
 
   // Add any keybinding overrides to this array.
   // To unbind a default keybinding, set the command to "unbound"
