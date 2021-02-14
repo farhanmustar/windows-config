@@ -168,6 +168,11 @@ choco install audacity -y
 choco install kdenlive -y
 ```
 
+### On-screen keyboard display
+```powershell
+choco install keycastow -y
+```
+
 ## Hard Disk Health Monitor and Benchmark Tools
 ```powershell
 choco install crystaldiskmark crystaldiskinfo -y
