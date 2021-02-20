@@ -20,7 +20,7 @@
         "source": "Windows.Terminal.PowershellCore",
         "cursorShape": "filledBox",
         "startingDirectory": "%USERPROFILE%",
-        "colorScheme": "PaperColor"
+        "colorScheme": "gruvbox"
       },
       {
         // Make changes here to the powershell.exe profile
@@ -51,25 +51,25 @@
   // Add custom color schemes to this array
   "schemes": [
 	  {
-		  "name": "PaperColor",
-		  "foreground": "#d0d0d0",
-		  "background": "#1c1c1c",
-		  "black": "#1c1c1c",
-		  "red": "#af005f",
-		  "green": "#5faf00",
-		  "yellow":"#d7af5f",
-		  "blue": "#5fafd7",
-		  "purple": "#808080",
-		  "cyan": "#d7875f",
-		  "white": "#d0d0d0",
-		  "brightBlack": "#585858",
-		  "brightRed": "#5faf5f",
-		  "brightGreen": "#afd700",
-		  "brightYellow": "#af87d7",
-		  "brightBlue": "#ffaf00",
-		  "brightPurple": "#ff5faf",
-		  "brightCyan": "#00afaf",
-		  "brightWhite": "#5f8787"
+		  "name": "gruvbox",
+		  "foreground": "#e6d4a3",
+		  "background": "#1e1e1e",
+		  "black": "#1e1e1e",
+		  "red": "#be0f17",
+		  "green": "#868715",
+		  "yellow":"#cc881a",
+		  "blue": "#377375",
+		  "purple": "#a04b73",
+		  "cyan": "#578e57",
+		  "white": "#978771",
+		  "brightBlack": "#7f7061",
+		  "brightRed": "#f73028",
+		  "brightGreen": "#aab01e",
+		  "brightYellow": "#f7b125",
+		  "brightBlue": "#719586",
+		  "brightPurple": "#c77089",
+		  "brightCyan": "#7db669",
+		  "brightWhite": "#e6d4a3"
 	  }
   ],
 
