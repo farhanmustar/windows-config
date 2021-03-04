@@ -6,7 +6,7 @@ Change Powershell tab completion behaviour and set ```ls``` alias to ```get-chil
 
 copy ```./Documents/PowerShell/profile.ps1``` to ```~/Documents/PowerShell/profile.ps1```
 
-set scrip execution policy to remotesigned
+set script execution policy to remotesigned
 ```
 Set-ExecutionPolicy remotesigned
 ```
@@ -145,6 +145,11 @@ Build in board should be enough, But if required can try to search at [snapeda.c
 Maybe add other library:-
 [SparkFun](https://github.com/sparkfun/SparkFun-KiCad-Libraries.git)
 [Digi-Key](https://github.com/Digi-Key/digikey-kicad-library.git)
+
+### 3D CAD Editing
+```powershell
+choco install freecad -y
+```
 
 ## PC Gaming
 ```powershell
