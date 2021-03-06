@@ -4,7 +4,7 @@ Make sure all run in admin powershell
 ## Powershell Core Configuration
 Change Powershell tab completion behaviour and set ```ls``` alias to ```get-childitemcolorformatwide```
 
-copy ```./Documents/PowerShell/profile.ps1``` to ```~/Documents/PowerShell/profile.ps1```
+copy ```./PowerShell/profile.ps1``` to ```~/Documents/PowerShell/profile.ps1```
 
 set script execution policy to remotesigned
 ```
