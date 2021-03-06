@@ -17,6 +17,10 @@ Install chocolatey from [chocolatey.org](https://chocolatey.org/install).
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 ```
 
+## Install Scripts
+copy content of ```./scripts``` to ```/ProgramData/Chocolatey/bin```
+
+## Recommended Package to Install
 install all other software using chocolatey
 ```powershell
 choco install `
