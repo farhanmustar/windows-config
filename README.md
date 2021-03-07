@@ -189,16 +189,34 @@ choco install crystaldiskmark crystaldiskinfo -y
 
 # Optional Setup
 ## Install scoop
-Some application not available in chocolatey, we can use scoop instead.
+Some application not available in chocolatey, we can use scoop instead.  
 Install command
 ```powershell
 iwr -useb get.scoop.sh | iex
 scoop bucket add extras
 ```
 
+## Use pageant for openssh ssh-ageant.
+Install wsl-ssh-pageant to allow use of pageant as ssh auth. (required scoop package manager)
+```
+scoop install wsl-ssh-pageant
+```
+copy ssh-pageant.bat script and added to path.
+copy script from ```./scripts/ssh-pageant.bat``` to ```/ProgramData/Chocolatey/bin```
+set env variable SSH_AUTH_SOCK to ssh-pageant.
+```
+SSH_AUTH_SOCK=\\.\pipe\ssh-pageant
+```
+How to use.
+* start Pageant.
+* run ```ssh-pageant``` command from terminal.
+* use ```ssh``` command as usual.
+
+
 ## Use pageant for git ssh auth
-optionally can configure git to use sshkey from putty. (but https should be good enough. git use windows credential manager)
-  - note that thare is bug to add new server to known host in terminal. need to manually ssh using putty and accept in gui.
+configure git to use ssh key from putty. (git use windows credential manager for http/s)
+>note that thare is bug to add new server to known host in terminal. need to manually ssh using putty and accept in gui.
+
 Set env variable GIT_SSH to pagent.
 ```
 GIT_SSH=C:\ProgramData\chocolatey\bin\PAGEANT.EXE
