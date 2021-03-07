@@ -188,7 +188,15 @@ choco install crystaldiskmark crystaldiskinfo -y
 ```
 
 # Optional Setup
-## Use paegent for ssh auth
+## Install scoop
+Some application not available in chocolatey, we can use scoop instead.
+Install command
+```powershell
+iwr -useb get.scoop.sh | iex
+scoop bucket add extras
+```
+
+## Use pageant for git ssh auth
 optionally can configure git to use sshkey from putty. (but https should be good enough. git use windows credential manager)
   - note that thare is bug to add new server to known host in terminal. need to manually ssh using putty and accept in gui.
 Set env variable GIT_SSH to pagent.
@@ -208,12 +216,4 @@ https://www.powershellgallery.com/packages
 Windows package manager.
 ```
 https://docs.microsoft.com/en-gb/windows/package-manager/
-```
-
-## Explore scoop
-need to compare first. or use both.
-Install
-```
-iwr -useb get.scoop.sh | iex
-scoop bucket add extras
 ```
