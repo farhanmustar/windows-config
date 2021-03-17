@@ -48,6 +48,10 @@ cpu-z hwmonitor `
 ```powershell
 choco install gimp -y
 ```
+or gimp with photoshop-like plugin.
+```powershell
+choco install photogimp -y
+```
 
 ### Note on watchexec
 For now there is no watch replacement in windows.

@@ -3,7 +3,7 @@
 net session >nul 2>&1
 if %errorLevel% == 0 (
   echo The system is going down for power off NOW!
-  shutdown /d P:0:0 /s /hybrid
+  shutdown /d P:0:0 /s /hybrid /t 1
 ) else (
   echo poweroff: Need to be admin
 )

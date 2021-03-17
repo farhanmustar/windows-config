@@ -3,7 +3,7 @@
 net session >nul 2>&1
 if %errorLevel% == 0 (
   echo The system is going down for reboot NOW!
-  shutdown /d P:0:0 /r
+  shutdown /d P:0:0 /r /t 1
 ) else (
   echo reboot: Need to be admin
 )
