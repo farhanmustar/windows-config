@@ -1,5 +1,6 @@
 Set-PSReadlineKeyHandler -Key Tab -Function Complete
 Set-Alias ls Get-ChildItemColorFormatWide
+function ll { Get-ChildItem -Attributes Hidden, !Hidden @Args }
 Set-Alias -Force sl Get-ChildItemColorFormatWide
 Set-Alias open Start-Process
 function vimg { vim -c GV -c tabonly }
