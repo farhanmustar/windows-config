@@ -30,7 +30,7 @@ psutils get-childitemcolor `
 powershell-core `
 microsoft-windows-terminal `
 vim universal-ctags git `
-grep less which wget rsync watchexec `
+ripgrep grep less which wget rsync watchexec `
 virtualbox `
 putty.install vcxsrv `
 filezilla dbeaver 7zip `
@@ -131,6 +131,11 @@ remove python exe file in following directory (note: use admin console. it is li
 windows did that to auto start windows store when use python keyword.why!!!
 ```
 C:\Users\farha\AppData\Local\Microsoft\WindowsApps
+```
+
+## PHP Development
+```powershell
+choco install composer -y
 ```
 
 ## Arduino Development
