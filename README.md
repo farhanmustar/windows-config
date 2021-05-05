@@ -7,7 +7,7 @@ Change Powershell tab completion behaviour and set ```ls``` alias to ```get-chil
 copy ```./PowerShell/profile.ps1``` to ```~/Documents/PowerShell/profile.ps1```
 
 set script execution policy to remotesigned
-```
+```powershell
 Set-ExecutionPolicy remotesigned
 ```
 
@@ -159,7 +159,7 @@ Maybe add other library:-
 [SparkFun](https://github.com/sparkfun/SparkFun-KiCad-Libraries.git)
 [Digi-Key](https://github.com/Digi-Key/digikey-kicad-library.git)
 
-### 3D CAD Editing
+## 3D CAD Editing
 ```powershell
 choco install freecad -y
 ```

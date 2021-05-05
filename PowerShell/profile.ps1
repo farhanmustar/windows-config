@@ -10,3 +10,5 @@ function grep {
 }
 function ssh { ssh.exe -X -A @Args }
 function ssh-basic { ssh.exe -X -A -L 8080:localhost:80 @Args }
+del alias:history
+function history { Get-Content (Get-PSReadlineOption).HistorySavePath }
