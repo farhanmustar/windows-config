@@ -24,7 +24,7 @@ copy content of ```./scripts``` to ```/ProgramData/Chocolatey/bin```
 install all other software using chocolatey
 ```powershell
 choco install `
-googlechrome postman `
+firefox postman `
 free-download-manager `
 psutils get-childitemcolor `
 powershell-core `
@@ -44,13 +44,20 @@ cpu-z hwmonitor `
 --ignore-checksums -y
 ```
 
-### Alternatively can use gimp instead of paint.net
+### Alternatively Software
+
+#### Gimp instead of Paint.net
 ```powershell
 choco install gimp -y
 ```
 or gimp with photoshop-like plugin.
 ```powershell
 choco install photogimp -y
+```
+
+#### Chrome instead of Firefox
+```powershell
+choco install googlechrome -y
 ```
 
 ### Note on watchexec
@@ -167,6 +174,13 @@ choco install freecad -y
 ## PC Gaming
 ```powershell
 choco install origin steam epicgameslauncher ds4windows -y
+```
+
+## Latex Editor
+Currently not working, need to install manually.
+Miktex have mpm as its package manager can explore that.
+```powershell
+choco install miktex --params '"/Set:essential"' -y
 ```
 
 ## Media Software
