@@ -110,6 +110,15 @@ install extension
 ## Configure Windows Terminal
 copy paste settings from ```./windows-terminal/settings.json``` to terminal settings.
 
+## WSL configuration
+Configure linux base system to not interop with host windows.
+* start wsl
+* copy file from ```wsl/wsl.conf``` to ```/etc/wsl.conf```
+* shutdown wsl to allow it to reload config.
+```powershell
+wsl --shutdown
+```
+
 ## Openssl Tools
 ```powershell
 choco install openssl openssl-wizard -y
