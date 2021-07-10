@@ -110,15 +110,6 @@ install extension
 ## Configure Windows Terminal
 copy paste settings from ```./windows-terminal/settings.json``` to terminal settings.
 
-## WSL configuration
-Configure linux base system to not interop with host windows.
-* start wsl
-* copy file from ```wsl/wsl.conf``` to ```/etc/wsl.conf```
-* shutdown wsl to allow it to reload config.
-```powershell
-wsl --shutdown
-```
-
 ## Openssl Tools
 ```powershell
 choco install openssl openssl-wizard -y
@@ -228,7 +219,7 @@ iwr -useb get.scoop.sh | iex
 scoop bucket add extras
 ```
 
-## Use pageant for openssh ssh-ageant.
+## Use pageant for powershell openssh ssh-agent.
 Install wsl-ssh-pageant to allow use of pageant as ssh auth. (required scoop package manager)
 ```
 scoop install wsl-ssh-pageant
@@ -253,6 +244,24 @@ Set env variable GIT_SSH to pagent.
 ```
 GIT_SSH=C:\ProgramData\chocolatey\bin\PAGEANT.EXE
 ```
+
+
+# WSL configuration
+## Configure wsl to not interop with host windows.
+* start wsl
+* copy file from ```wsl/wsl.conf``` to ```/etc/wsl.conf```
+* shutdown wsl to allow it to reload config.
+```powershell
+wsl --shutdown
+```
+
+## Use pass pagent as ssh-agent to wsl from windows host.
+Follow similar step to use pagent in powershell ssh-agent.
+Then in wsl add environment variable in .bashrc
+```bash
+export SSH_AUTH_SOCK=/mnt/c/ssh-agent.sock
+```
+
 
 # TODO
 
