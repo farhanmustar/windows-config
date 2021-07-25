@@ -76,6 +76,18 @@ Users can now install using chocolatey without admin enabled powershell as shown
 sudo choco install <software_name>
 ```
 
+## Configure Keyboard Shortcut.
+* Note: if app delay start when pressing shortcut, open menu and search for background apps. Then disable all except used one.
+
+Configure putty shortcut to be ```ctrl + alt + r```
+
+Configure windows terminal shortcut to be ```ctrl + alt + t```
+
+* open run ```window + r```.
+* run this ```shell:AppsFolder```
+* create shortcut for windows terminal at ```C:\ProgramData\Microsoft\Windows\Start Menu\Programs```
+* right click properties and add keyboard shortcut.
+
 ## Configure Putty
 putty use register to store settings. Double click on ```./putty/putty.reg``` then accept importing the register.
 
