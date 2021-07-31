@@ -1,0 +1,34 @@
+" Vim Setting Config for Visual Studio VsVim Extension.
+
+" Some tuning
+set ignorecase	" Do case insensitive matching
+set smartcase		" Do smart case matching
+set number
+" Tabs settings
+set expandtab
+set softtabstop=0
+set shiftwidth=2
+set tabstop=2
+
+" Quickly select the text that was just pasted. This allows you to, e.g.,
+" indent it after pasting.
+noremap gV '[v']
+
+" Stay in visual mode when indenting. You will never have to run gv after
+" performing an indentation.
+vnoremap < <gv
+vnoremap > >gv
+
+" move text in visual mode
+vnoremap K :<C-u>execute "normal gvdkP"<CR> | '[v']V
+vnoremap J :<C-u>execute "normal gvdjP"<CR> | '[v']V
+
+" Make Y yank everything from the cursor to the end of the line. This makes Y
+" act more like C or D because by default, Y yanks the current line (i.e. the
+" same as yy).
+noremap Y y$
+
+" Avoid pressing shift key to switch to previous tab
+noremap gr gT
+
+nnoremap gq <C-w>c
