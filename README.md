@@ -288,3 +288,6 @@ Windows package manager.
 ```
 https://docs.microsoft.com/en-gb/windows/package-manager/
 ```
+
+## win-vind
+* ecplore win-vind https://github.com/pit-ray/win-vind
