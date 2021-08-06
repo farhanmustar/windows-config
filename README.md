@@ -254,7 +254,7 @@ configure git to use ssh key from putty. (git use windows credential manager for
 
 Set env variable GIT_SSH to pagent.
 ```
-GIT_SSH=C:\ProgramData\chocolatey\bin\PAGEANT.EXE
+GIT_SSH=C:\ProgramData\chocolatey\bin\PLINK.EXE
 ```
 
 
