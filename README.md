@@ -100,11 +100,11 @@ When adding new virtual machine
 ## Configure Keyboard Shortcut.
 * Note: if app delay start when pressing shortcut, open menu and search for background apps. Then disable all except used one.
 
-Configure putty shortcut to be ```ctrl + alt + r```
+Configure putty shortcut to be <!-- ctrl + alt + r --> <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>r</kbd>
 
-Configure windows terminal shortcut to be ```ctrl + alt + t```
+Configure windows terminal shortcut to be <!-- ctrl + alt + t --> <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>t</kbd>
 
-* open run ```window + r```.
+* open run <!-- window + r --> <kbd>window</kbd> + <kbd>r</kbd>
 * run this ```shell:AppsFolder```
 * create shortcut for windows terminal at ```C:\ProgramData\Microsoft\Windows\Start Menu\Programs```
 * right click properties and add keyboard shortcut.
@@ -125,7 +125,7 @@ git clone https://github.com/farhanmustar/dotfiles.git
 ```
 
 ## Configure Keyboard Mapping
-To remap ```caps_lock``` key to ```esc``` key and ```scroll_lock``` key to ```caps_lock``` key. 
+To remap <kbd>caps_lock</kbd> key to <kbd>esc</kbd> key and <kbd>scroll_lock</kbd> key to <kbd>caps_lock</kbd> key. 
   - Double click ```keyboard_remap/remap_caps_lock_to_escape_scroll_lock_to_caps_lock.reg``` and accept importing the register
 
 To restore back the keyboard layout maping to default value
