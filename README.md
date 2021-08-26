@@ -31,7 +31,6 @@ powershell-core `
 microsoft-windows-terminal `
 vim universal-ctags git `
 ripgrep grep less which wget rsync watchexec `
-virtualbox `
 putty.install vcxsrv `
 filezilla dbeaver 7zip `
 advanced-ip-scanner wireshark `
@@ -40,7 +39,7 @@ paint.net inkscape `
 vlc `
 cpu-z hwmonitor `
 --install-arguments='"ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1"' `
---params "/NoGuiHereIntegration /NoShellHereIntegration /ExtensionPack" `
+--params "/NoGuiHereIntegration /NoShellHereIntegration" `
 --ignore-checksums -y
 ```
 
@@ -60,6 +59,11 @@ choco install photogimp -y
 choco install googlechrome -y
 ```
 
+#### Virtualbox instead of Hyper-V
+```powershell
+choco install virtualbox -y --params "/ExtensionPack"
+```
+
 ### Note on watchexec
 For now there is no watch replacement in windows.
 watchexec is almost similar to watch, but only execute command if got file change.
@@ -75,6 +79,23 @@ Users can now install using chocolatey without admin enabled powershell as shown
 ```powershell
 sudo choco install <software_name>
 ```
+
+## Configure Hyper-V
+Hyper-V is not turn on by default. Enable it:
+* Search and start "Turn Window features on or off"
+* Tick Hyper-V option.
+
+### Optional Workflow Note
+Configure new virtual switch (default switch need to use dhcp for internet and external network)
+* Open Hyper-V Manager after reboot.
+* Add new virtual switch and named is as "192.168.5.1"
+* Search and start "View network connections".
+* Configure new vEthernet(192.168.5.1) with static ip of 192.168.5.1.
+
+When adding new virtual machine 
+* Suffix it name with default ip such as 192.168.5.2
+* Add new network adapter and connect to "192.168.5.1" switch.
+* Start virtual machine and configure the adpater to be the assigned ip.
 
 ## Configure Keyboard Shortcut.
 * Note: if app delay start when pressing shortcut, open menu and search for background apps. Then disable all except used one.
