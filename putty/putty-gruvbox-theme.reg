@@ -105,7 +105,7 @@ Windows Registry Editor Version 5.00
 "WindowBorder"=dword:00000001
 "CurType"=dword:00000000
 "BlinkCur"=dword:00000000
-"Beep"=dword:00000001
+"Beep"=dword:00000000
 "BeepInd"=dword:00000000
 "BellWaveFile"=""
 "BellOverload"=dword:00000001
@@ -123,10 +123,10 @@ Windows Registry Editor Version 5.00
 "WinTitle"=""
 "TermWidth"=dword:00000050
 "TermHeight"=dword:00000018
-"Font"="Courier New"
+"Font"="Cascadia Code"
 "FontIsBold"=dword:00000000
 "FontCharSet"=dword:00000000
-"FontHeight"=dword:0000000a
+"FontHeight"=dword:00000009
 "FontQuality"=dword:00000000
 "FontVTMode"=dword:00000004
 "UseSystemColours"=dword:00000000
@@ -335,7 +335,7 @@ Windows Registry Editor Version 5.00
 "WindowBorder"=dword:00000001
 "CurType"=dword:00000000
 "BlinkCur"=dword:00000000
-"Beep"=dword:00000001
+"Beep"=dword:00000000
 "BeepInd"=dword:00000000
 "BellWaveFile"=""
 "BellOverload"=dword:00000001
@@ -353,10 +353,10 @@ Windows Registry Editor Version 5.00
 "WinTitle"=""
 "TermWidth"=dword:00000050
 "TermHeight"=dword:00000018
-"Font"="Courier New"
+"Font"="Cascadia Code"
 "FontIsBold"=dword:00000000
 "FontCharSet"=dword:00000000
-"FontHeight"=dword:0000000a
+"FontHeight"=dword:00000009
 "FontQuality"=dword:00000000
 "FontVTMode"=dword:00000004
 "UseSystemColours"=dword:00000000
