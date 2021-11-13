@@ -99,7 +99,7 @@ Windows Registry Editor Version 5.00
 "LocalEdit"=dword:00000002
 "Answerback"="PuTTY"
 "AlwaysOnTop"=dword:00000000
-"FullScreenOnAltEnter"=dword:00000000
+"FullScreenOnAltEnter"=dword:00000001
 "HideMousePtr"=dword:00000000
 "SunkenEdge"=dword:00000000
 "WindowBorder"=dword:00000001
@@ -329,7 +329,7 @@ Windows Registry Editor Version 5.00
 "LocalEdit"=dword:00000002
 "Answerback"="PuTTY"
 "AlwaysOnTop"=dword:00000000
-"FullScreenOnAltEnter"=dword:00000000
+"FullScreenOnAltEnter"=dword:00000001
 "HideMousePtr"=dword:00000000
 "SunkenEdge"=dword:00000000
 "WindowBorder"=dword:00000001
