@@ -30,7 +30,7 @@ psutils get-childitemcolor `
 powershell-core `
 microsoft-windows-terminal `
 vim universal-ctags git `
-ripgrep grep less which wget rsync watchexec fd `
+ripgrep grep less which wget rsync watchexec fd tac `
 putty.install vcxsrv `
 filezilla dbeaver 7zip `
 advanced-ip-scanner wireshark `
