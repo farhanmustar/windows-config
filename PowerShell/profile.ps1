@@ -1,9 +1,11 @@
+Set-PSReadlineOption -EditMode Emacs
 Set-PSReadlineKeyHandler -Key Tab -Function Complete
 Set-Alias ls Get-ChildItemColorFormatWide
 function ll { Get-ChildItem -Attributes Hidden, !Hidden @Args }
 Set-Alias -Force sl Get-ChildItemColorFormatWide
 Set-Alias open Start-Process
 function vimod { Set-PSReadlineOption -EditMode Vi; Set-PSReadlineKeyHandler -Key Tab -Function Complete }
+function novimod { Set-PSReadlineOption -EditMode Emacs; Set-PSReadlineKeyHandler -Key Tab -Function Complete }
 function vimg { vim -c GV -c "silent! G" -c "silent! tabonly" }
 function grep { 
   process { $_ | grep.exe --color=auto @Args }
