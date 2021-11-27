@@ -171,11 +171,10 @@ sudo npm install -g windows-build-tools
 choco install python2 -y
 ```
 
-remove python exe file in following directory (note: use admin console. it is link file)
+Remove python alias.
 windows did that to auto start windows store when use python keyword.why!!!
-```
-C:\Users\farha\AppData\Local\Microsoft\WindowsApps
-```
+* Go to start menu and search ```manage app execution aliases```
+* Disable alias for python and python 3.
 
 ## PHP Development
 ```powershell
@@ -277,7 +276,7 @@ How to use.
 configure git to use ssh key from putty. (git use windows credential manager for http/s)
 >note that thare is bug to add new server to known host in terminal. need to manually ssh using putty and accept in gui.
 
-Set env variable GIT_SSH to pagent.
+Set env variable GIT_SSH to plink.exe path. hint: use ```which plink``` to display its path.
 ```
 GIT_SSH=C:\ProgramData\chocolatey\bin\PLINK.EXE
 ```
