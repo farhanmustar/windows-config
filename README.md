@@ -152,6 +152,10 @@ choco install openssl openssl-wizard -y
 ```powershell
 choco install androidstudio -y
 ```
+Add set ANDROID_HOME path to the sdk path.
+Add set JAVA_HOME path to ```C:\Program Files\Android\Android Studio\jre```
+Add ```C:\Program Files\Android\Android Studio\jre\bin``` to Path env variable.
+Add sdk/tools, sdk/tools/bin and sdk/platform-tools to Path env variable.
 
 ## Nodejs Development
 ```powershell
