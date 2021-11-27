@@ -29,7 +29,7 @@ free-download-manager `
 psutils get-childitemcolor `
 powershell-core `
 microsoft-windows-terminal `
-vim universal-ctags git `
+vim universal-ctags git rclone `
 ripgrep grep less which wget rsync watchexec fd tac `
 putty.install vcxsrv `
 filezilla dbeaver 7zip `
