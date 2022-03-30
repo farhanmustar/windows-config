@@ -29,7 +29,7 @@ free-download-manager `
 psutils get-childitemcolor `
 powershell-core `
 microsoft-windows-terminal `
-vim neovim universal-ctags git rclone `
+neovim universal-ctags git rclone `
 ripgrep grep less which wget rsync watchexec fd tac findutils `
 putty.install vcxsrv `
 filezilla dbeaver 7zip `
@@ -44,6 +44,11 @@ cpu-z hwmonitor windirstat `
 ```
 
 ### Alternatively Software
+
+#### Vim instead of NeoVim
+```powershell
+choco install vim -y
+```
 
 #### Gimp instead of Paint.net
 ```powershell
