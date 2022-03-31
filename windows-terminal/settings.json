@@ -78,7 +78,13 @@
 
   // Add any keybinding overrides to this array.
   // To unbind a default keybinding, set the command to "unbound"
-  "keybindings": [{
+  "keybindings": [
+    {
+      "name": "Map <C-Space> to <C-p> for NeoVim fix",
+      "command": { "action": "sendInput", "input": "\u0010" },
+      "keys": "ctrl+space"
+    },
+    {
       "command": {
         "action": "duplicateTab"
       },
