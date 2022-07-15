@@ -230,6 +230,9 @@ choco install miktex --params '"/Set:essential"' -y
 ```powershell
 choco install obs-studio -y
 ```
+```powershell
+choco install screentogif -y
+```
 
 ### Audio Editing
 ```powershell
