@@ -85,6 +85,15 @@ Users can now install using chocolatey without admin enabled powershell as shown
 sudo choco install <software_name>
 ```
 
+## Configure NeoVim
+To ensure consistent configuration path with linux,
+* set XDG_CONFIG_HOME to ```C:\Users\<username>\.config``` in user env variable.
+
+To use Nightly NeoVim.
+```powershell
+choco update neovim --pre
+```
+
 ## Configure Hyper-V
 Hyper-V is not turn on by default. Enable it:
 * Search and start "Turn Window features on or off"
