@@ -37,6 +37,7 @@ advanced-ip-scanner wireshark `
 libreoffice notepadplusplus `
 paint.net inkscape `
 vlc `
+deskpins `
 cpu-z hwmonitor windirstat `
 --install-arguments='"ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1"' `
 --params "/NoGuiHereIntegration /NoShellHereIntegration" `
