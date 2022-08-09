@@ -95,6 +95,21 @@ To use Nightly NeoVim.
 choco update neovim --pre
 ```
 
+### Share clipboard with remote server through ssh with putty
+* On server, install xclip. For example, in ubuntu:
+```bash
+apt install xclip
+```
+* Run the ```vcxsrv``` on host machine.
+* Set ```DISPLAY``` environment variable to ```localhost:10.0```
+```bash
+export DISPLAY=localhost:10.0
+```
+* Test xserver forwarding working by using ```xclock```
+```bash
+xclock
+```
+
 ## Configure Hyper-V
 Hyper-V is not turn on by default. Enable it:
 * Search and start "Turn Window features on or off"

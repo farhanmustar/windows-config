@@ -40,7 +40,7 @@ Windows Registry Editor Version 5.00
 "ProxyPassword"=""
 "ProxyTelnetCommand"="connect %host %port\\n"
 "ProxyLogToTerm"=dword:00000001
-"Environment"=""
+"Environment"="DISPLAY=localhost\=10.0"
 "UserName"=""
 "UserNameFromEnvironment"=dword:00000000
 "LocalUserName"=""
@@ -270,7 +270,7 @@ Windows Registry Editor Version 5.00
 "ProxyPassword"=""
 "ProxyTelnetCommand"="connect %host %port\\n"
 "ProxyLogToTerm"=dword:00000001
-"Environment"=""
+"Environment"="DISPLAY=localhost\=10.0"
 "UserName"=""
 "UserNameFromEnvironment"=dword:00000000
 "LocalUserName"=""
