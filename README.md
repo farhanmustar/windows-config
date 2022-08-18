@@ -70,6 +70,13 @@ choco install googlechrome -y
 choco install virtualbox -y --params "/ExtensionPack"
 ```
 
+#### Wezterm instead of Microsoft Windows Terminal
+Currently pending migration. (in testing phase)
+Wezterm able to mimic tmux visual and more customizations.
+```powershell
+choco install wezterm -y 
+```
+
 ### Note on watchexec
 For now there is no watch replacement in windows.
 watchexec is almost similar to watch, but only execute command if got file change.
