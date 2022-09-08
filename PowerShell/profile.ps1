@@ -1,4 +1,4 @@
-Set-PSReadlineOption -EditMode Emacs
+Set-PSReadlineOption -EditMode Emacs -BellStyle None
 Set-PSReadlineKeyHandler -Key Tab -Function Complete
 Set-Alias ls Get-ChildItemColorFormatWide
 function ll { Get-ChildItem -Attributes Hidden, !Hidden @Args }
