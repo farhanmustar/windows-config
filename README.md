@@ -323,12 +323,20 @@ GIT_SSH=C:\ProgramData\chocolatey\bin\PLINK.EXE
 
 
 # WSL configuration
-## Configure wsl to not interop with host windows.
+## Install default (ubuntu) distribution
+```powershell
+wsl --install
+```
+## Configure wsl to not add path to host windows bin.
 * start wsl
 * copy file from ```wsl/wsl.conf``` to ```/etc/wsl.conf```
 * shutdown wsl to allow it to reload config.
 ```powershell
 wsl --shutdown
+```
+## Add explorer.exe as cmd in wsl
+```bash
+sudo ln -sT /mnt/c/Windows/explorer.exe /usr/bin/explorer
 ```
 
 ## Use pass pagent as ssh-agent to wsl from windows host.
