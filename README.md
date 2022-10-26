@@ -1,55 +1,32 @@
 # Windows configuration guide
 Make sure all run in admin powershell
 
-## Powershell Core Configuration
-Change Powershell tab completion behaviour and set ```ls``` alias to ```get-childitemcolorformatwide```
-
-copy ```./PowerShell/profile.ps1``` to ```~/Documents/PowerShell/profile.ps1```
-
-set script execution policy to remotesigned
-```powershell
-Set-ExecutionPolicy remotesigned
-```
-
 ## Chocolatey Package Manager
 Install chocolatey from [chocolatey.org](https://chocolatey.org/install).
 ```powershell
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 ```
 
-## Install Scripts
-copy content of ```./scripts``` to ```/ProgramData/Chocolatey/bin```
-
 ## Recommended Package to Install
 install all other software using chocolatey
 ```powershell
 choco install `
-firefox postman `
+postman `
 free-download-manager `
-psutils get-childitemcolor `
-powershell-core `
-microsoft-windows-terminal `
-neovim universal-ctags git rclone `
-ripgrep grep less which wget rsync watchexec fd tac findutils `
+psutils `
+wezterm `
+rclone `
 putty.install vcxsrv `
 filezilla dbeaver 7zip `
 advanced-ip-scanner wireshark `
 libreoffice notepadplusplus `
 paint.net inkscape `
 vlc `
-deskpins `
 cpu-z hwmonitor windirstat `
---install-arguments='"ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1"' `
---params "/NoGuiHereIntegration /NoShellHereIntegration" `
---ignore-checksums -y
+-y
 ```
 
 ### Alternatively Software
-
-#### Vim instead of NeoVim
-```powershell
-choco install vim -y
-```
 
 #### Gimp instead of Paint.net
 ```powershell
@@ -60,7 +37,7 @@ or gimp with photoshop-like plugin.
 choco install photogimp -y
 ```
 
-#### Chrome instead of Firefox
+#### Chrome instead of Edge
 ```powershell
 choco install googlechrome -y
 ```
@@ -70,22 +47,6 @@ choco install googlechrome -y
 choco install virtualbox -y --params "/ExtensionPack"
 ```
 
-#### Wezterm instead of Microsoft Windows Terminal
-Currently pending migration. (in testing phase)
-Wezterm able to mimic tmux visual and more customizations.
-```powershell
-choco install wezterm -y 
-```
-
-### Note on watchexec
-For now there is no watch replacement in windows.
-watchexec is almost similar to watch, but only execute command if got file change.
-Exemple: execute ```node index.js``` if file change in current directory.
-```
-watchexec -- node .\index.js
-```
-TIPS: for nodejs use ```console.clear()``` inside index.js to clear console log before print new stuff.
-
 ### Note on sudo
 ```sudo``` keyword is available after installing psutils, which is included in the above install command.
 Users can now install using chocolatey without admin enabled powershell as shown below.
@@ -93,31 +54,28 @@ Users can now install using chocolatey without admin enabled powershell as shown
 sudo choco install <software_name>
 ```
 
-## Configure NeoVim
-To ensure consistent configuration path with linux,
-* set XDG_CONFIG_HOME to ```C:\Users\<username>\.config``` in user env variable.
-
-To use Nightly NeoVim.
+# WSL configuration
+## Install default (ubuntu) distribution
 ```powershell
-choco update neovim --pre
+wsl --install
+```
+## Configure wsl to not add path to host windows bin.
+* start wsl
+* copy file from ```wsl/wsl.conf``` to ```/etc/wsl.conf```
+* shutdown wsl to allow it to reload config.
+```powershell
+wsl --shutdown
+```
+## Add explorer.exe as cmd in wsl
+```bash
+sudo ln -sT /mnt/c/Windows/explorer.exe /usr/bin/explorer
+```
+## Install build-essential
+```bash
+sudo apt install build-essential
 ```
 
-### Share clipboard with remote server through ssh with putty
-* On server, install xclip. For example, in ubuntu:
-```bash
-apt install xclip
-```
-* Run the ```vcxsrv``` on host machine.
-* Set ```DISPLAY``` environment variable to ```localhost:10.0```
-```bash
-export DISPLAY=localhost:10.0
-```
-* Test xserver forwarding working by using ```xclock```
-```bash
-xclock
-```
-
-## Configure Hyper-V
+# Configure Hyper-V
 Hyper-V is not turn on by default. Enable it:
 * Search and start "Turn Window features on or off"
 * Tick Hyper-V option.
@@ -132,32 +90,14 @@ Configure new virtual switch (default switch need to use dhcp for internet and e
 When adding new virtual machine 
 * Suffix it name with default ip such as 192.168.5.2
 * Add new network adapter and connect to "192.168.5.1" switch.
-* Start virtual machine and configure the adpater to be the assigned ip.
+* Start virtual machine and configure the adapter to be the assigned ip.
 
 ## Configure Keyboard Shortcut.
 * Note: if app delay start when pressing shortcut, open menu and search for background apps. Then disable all except used one.
 
-Configure putty shortcut to be <!-- ctrl + alt + r --> <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>r</kbd>
-
-Configure windows terminal shortcut to be <!-- ctrl + alt + t --> <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>t</kbd>
-
-* open run <!-- window + r --> <kbd>window</kbd> + <kbd>r</kbd>
-* run this ```shell:AppsFolder```
-* create shortcut for windows terminal at ```C:\ProgramData\Microsoft\Windows\Start Menu\Programs```
-* right click properties and add keyboard shortcut.
-
-## Configure Putty
-putty use register to store settings. Double click on ```./putty/putty.reg``` then accept importing the register.
-
-configure shortcut for pagent to pass private key,   
-just add path of the key in quote after the pagent url.
-
-configure Xlaunch. then save the config to document folder. (xserver.xlaunch)
-
-## Configure Vim
+## Configure dotfiles inside wsl
 Clone dotfiles repo at https://github.com/farhanmustar/dotfiles.git.
-Run vim and run ```:PluginInstall``` to install all plugins.
-```
+```bash
 git clone https://github.com/farhanmustar/dotfiles.git
 ```
 
@@ -168,7 +108,7 @@ To remap <kbd>caps_lock</kbd> key to <kbd>esc</kbd> key and <kbd>scroll_lock</kb
 To restore back the keyboard layout maping to default value
   - Double click ```keyboard_remap/default_keyboard_remap.reg``` and accept importing the register
 
-## Configure Chrome
+## Configure Browser
 install extension
   - vimmium c
       - configure search to accept js regex
@@ -176,52 +116,6 @@ install extension
       - configure dark reader shortcut to ctrl+shift+d
   - js error notify
   - free download manager for chrome
-
-## Configure Windows Terminal
-copy paste settings from ```./windows-terminal/settings.json``` to terminal settings.
-
-## Openssl Tools
-```powershell
-choco install openssl openssl-wizard -y
-```
-
-## Android  Development
-```powershell
-choco install androidstudio -y
-```
-Add set ANDROID_HOME path to the sdk path.
-Add set JAVA_HOME path to ```C:\Program Files\Android\Android Studio\jre```
-Add ```C:\Program Files\Android\Android Studio\jre\bin``` to Path env variable.
-Add sdk/tools, sdk/tools/bin and sdk/platform-tools to Path env variable.
-
-## Nodejs Development
-```powershell
-choco install nodejs -y
-```
-basic tools used to build pkg manually.
-```powershell
-sudo npm install -g windows-build-tools
-```
-
-## Python 2.x Development
-```powershell
-choco install python2 -y
-```
-
-Remove python alias.
-windows did that to auto start windows store when use python keyword.why!!!
-* Go to start menu and search ```manage app execution aliases```
-* Disable alias for python and python 3.
-
-## PHP Development
-```powershell
-choco install composer -y
-```
-
-## Arduino Development
-```powershell
-choco install arduino arduino-cli -y
-```
 
 ## PlatformIO Development
 Need to use pip to install only. Refer to python section to install pip.
@@ -295,6 +189,155 @@ iwr -useb get.scoop.sh | iex
 scoop bucket add extras
 ```
 
+# TODO
+
+## Explore Powershell Galery
+Powershell got its own build in module manager. Need to explore, as for now the package available is very limited.
+```
+https://www.powershellgallery.com/packages
+```
+
+## Explore Windows Package Manager
+Windows package manager.
+```
+https://docs.microsoft.com/en-gb/windows/package-manager/
+```
+
+# Abandon Note
+Note that are not relevant anymore.
+
+## Powershell Core Configuration
+Change Powershell tab completion behaviour and set ```ls``` alias to ```get-childitemcolorformatwide```
+
+copy ```./PowerShell/profile.ps1``` to ```~/Documents/PowerShell/profile.ps1```
+
+set script execution policy to remotesigned
+```powershell
+Set-ExecutionPolicy remotesigned
+```
+
+## Install Scripts
+copy content of ```./scripts``` to ```/ProgramData/Chocolatey/bin```
+
+## Recommended Package to Install
+install all other software using chocolatey
+```powershell
+choco install `
+psutils get-childitemcolor `
+powershell-core `
+microsoft-windows-terminal `
+neovim universal-ctags git rclone `
+ripgrep grep less which wget rsync watchexec fd tac findutils `
+putty.install vcxsrv `
+--install-arguments='"ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1"' `
+--params "/NoGuiHereIntegration /NoShellHereIntegration" `
+--ignore-checksums -y
+```
+
+### Note on watchexec
+For now there is no watch replacement in windows.
+watchexec is almost similar to watch, but only execute command if got file change.
+Exemple: execute ```node index.js``` if file change in current directory.
+```
+watchexec -- node .\index.js
+```
+TIPS: for nodejs use ```console.clear()``` inside index.js to clear console log before print new stuff.
+
+## Configure NeoVim
+To ensure consistent configuration path with linux,
+* set XDG_CONFIG_HOME to ```C:\Users\<username>\.config``` in user env variable.
+
+To use Nightly NeoVim.
+```powershell
+choco update neovim --pre
+```
+
+### Share clipboard with remote server through ssh with putty
+* On server, install xclip. For example, in ubuntu:
+```bash
+apt install xclip
+```
+* Run the ```vcxsrv``` on host machine.
+* Set ```DISPLAY``` environment variable to ```localhost:10.0```
+```bash
+export DISPLAY=localhost:10.0
+```
+* Test xserver forwarding working by using ```xclock```
+```bash
+xclock
+```
+
+## Configure Keyboard Shortcut.
+Configure putty shortcut to be <!-- ctrl + alt + r --> <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>r</kbd>
+
+Configure windows terminal shortcut to be <!-- ctrl + alt + t --> <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>t</kbd>
+
+* open run <!-- window + r --> <kbd>window</kbd> + <kbd>r</kbd>
+* run this ```shell:AppsFolder```
+* create shortcut for windows terminal at ```C:\ProgramData\Microsoft\Windows\Start Menu\Programs```
+* right click properties and add keyboard shortcut.
+
+## Configure Putty
+putty use register to store settings. Double click on ```./putty/putty.reg``` then accept importing the register.
+
+configure shortcut for pagent to pass private key,   
+just add path of the key in quote after the pagent url.
+
+configure Xlaunch. then save the config to document folder. (xserver.xlaunch)
+
+## Configure Vim
+Clone dotfiles repo at https://github.com/farhanmustar/dotfiles.git.
+Run vim and run ```:PlugInstall``` to install all plugins.
+```
+git clone https://github.com/farhanmustar/dotfiles.git
+```
+
+## Configure Windows Terminal
+copy paste settings from ```./windows-terminal/settings.json``` to terminal settings.
+
+## Openssl Tools
+```powershell
+choco install openssl openssl-wizard -y
+```
+
+## Android  Development
+```powershell
+choco install androidstudio -y
+```
+Add set ANDROID_HOME path to the sdk path.
+Add set JAVA_HOME path to ```C:\Program Files\Android\Android Studio\jre```
+Add ```C:\Program Files\Android\Android Studio\jre\bin``` to Path env variable.
+Add sdk/tools, sdk/tools/bin and sdk/platform-tools to Path env variable.
+
+## Nodejs Development
+```powershell
+choco install nodejs -y
+```
+basic tools used to build pkg manually.
+```powershell
+sudo npm install -g windows-build-tools
+```
+
+## Python 2.x Development
+```powershell
+choco install python2 -y
+```
+
+Remove python alias.
+windows did that to auto start windows store when use python keyword.why!!!
+* Go to start menu and search ```manage app execution aliases```
+* Disable alias for python and python 3.
+
+## PHP Development
+```powershell
+choco install composer -y
+```
+
+## Arduino Development
+```powershell
+choco install arduino arduino-cli -y
+```
+
 ## Use pageant for powershell openssh ssh-agent.
 Install wsl-ssh-pageant to allow use of pageant as ssh auth. (required scoop package manager)
 ```
@@ -321,42 +364,9 @@ Set env variable GIT_SSH to plink.exe path. hint: use ```which plink``` to displ
 GIT_SSH=C:\ProgramData\chocolatey\bin\PLINK.EXE
 ```
 
-
-# WSL configuration
-## Install default (ubuntu) distribution
-```powershell
-wsl --install
-```
-## Configure wsl to not add path to host windows bin.
-* start wsl
-* copy file from ```wsl/wsl.conf``` to ```/etc/wsl.conf```
-* shutdown wsl to allow it to reload config.
-```powershell
-wsl --shutdown
-```
-## Add explorer.exe as cmd in wsl
-```bash
-sudo ln -sT /mnt/c/Windows/explorer.exe /usr/bin/explorer
-```
-
 ## Use pass pagent as ssh-agent to wsl from windows host.
 Follow similar step to use pagent in powershell ssh-agent.
 Then in wsl add environment variable in .bashrc
 ```bash
 export SSH_AUTH_SOCK=/mnt/c/ssh-agent.sock
-```
-
-
-# TODO
-
-## Explore Powershell Galery
-Powershell got its own build in module manager. Need to explore, as for now the package available is very limited.
-```
-https://www.powershellgallery.com/packages
-```
-
-## Explore Windows Package Manager
-Windows package manager.
-```
-https://docs.microsoft.com/en-gb/windows/package-manager/
 ```
