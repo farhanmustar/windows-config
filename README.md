@@ -22,6 +22,7 @@ advanced-ip-scanner wireshark `
 libreoffice notepadplusplus `
 paint.net inkscape `
 vlc `
+powertoys `
 cpu-z hwmonitor windirstat `
 -y
 ```
@@ -66,9 +67,11 @@ wsl --install
 ```powershell
 wsl --shutdown
 ```
-## Add explorer.exe as cmd in wsl
+## Passthrough host cmd in wsl
 ```bash
 sudo ln -sT /mnt/c/Windows/explorer.exe /usr/bin/explorer
+sudo ln -sT /mnt/c/Windows/System32/wsl.exe /usr/bin/wsl
+sudo ln -sT /mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe /usr/bin/powershell
 ```
 ## Install build-essential
 ```bash
