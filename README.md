@@ -16,7 +16,7 @@ free-download-manager `
 psutils `
 wezterm `
 rclone `
-putty.install vcxsrv `
+vcxsrv `
 filezilla dbeaver 7zip `
 advanced-ip-scanner wireshark `
 libreoffice notepadplusplus `
@@ -72,6 +72,17 @@ wsl --shutdown
 sudo ln -sT /mnt/c/Windows/explorer.exe /usr/bin/explorer
 sudo ln -sT /mnt/c/Windows/System32/wsl.exe /usr/bin/wsl
 sudo ln -sT /mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe /usr/bin/powershell
+sudo ln -sT /mnt/c/Windows/System32/clip.exe /usr/bin/clip
+```
+## Execute powershell from wsl bash
+Add following to bash_alias.
+```bash
+alias pwsh='powershell -Command'
+```
+THis allow for executing powershell cmd such as chocolatey install
+```bash
+pwsh sudo choco install ...
+pwsh Get-VM
 ```
 ## Install build-essential
 ```bash
@@ -86,7 +97,7 @@ Hyper-V is not turn on by default. Enable it:
 ### Optional Workflow Note
 Configure new virtual switch (default switch need to use dhcp for internet and external network)
 * Open Hyper-V Manager after reboot.
-* Add new virtual switch and named is as "192.168.5.1"
+* Add new virtual switch (Internal) and named is as "192.168.5.1"
 * Search and start "View network connections".
 * Configure new vEthernet(192.168.5.1) with static ip of 192.168.5.1.
 
