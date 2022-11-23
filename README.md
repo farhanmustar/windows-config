@@ -22,30 +22,10 @@ advanced-ip-scanner wireshark `
 libreoffice notepadplusplus `
 paint.net inkscape `
 vlc `
+git `
 powertoys `
 cpu-z hwmonitor windirstat `
 -y
-```
-
-### Alternatively Software
-
-#### Gimp instead of Paint.net
-```powershell
-choco install gimp -y
-```
-or gimp with photoshop-like plugin.
-```powershell
-choco install photogimp -y
-```
-
-#### Chrome instead of Edge
-```powershell
-choco install googlechrome -y
-```
-
-#### Virtualbox instead of Hyper-V
-```powershell
-choco install virtualbox -y --params "/ExtensionPack"
 ```
 
 ### Note on sudo
@@ -53,6 +33,14 @@ choco install virtualbox -y --params "/ExtensionPack"
 Users can now install using chocolatey without admin enabled powershell as shown below.
 ```powershell
 sudo choco install <software_name>
+```
+
+## Install scoop
+Some application not available in chocolatey, we can use scoop instead.  
+Install command
+```powershell
+iwr -useb get.scoop.sh | iex
+scoop bucket add extras
 ```
 
 # WSL configuration
@@ -79,10 +67,11 @@ Add following to bash_alias.
 ```bash
 alias pwsh='powershell -Command'
 ```
-THis allow for executing powershell cmd such as chocolatey install
+This allow for executing powershell cmd such as chocolatey install
 ```bash
 pwsh sudo choco install ...
 pwsh Get-VM
+pwsh "iwr -useb get.scoop.sh | iex"  # pipe need to be in quote 
 ```
 ## Install build-essential
 ```bash
@@ -130,6 +119,42 @@ install extension
       - configure dark reader shortcut to ctrl+shift+d
   - js error notify
   - free download manager for chrome
+
+# Install Tiling Window Management (Komorebi)
+```bash
+scoop install komorebi
+scoop install autohotkey
+```
+* Set environment variable `KOMOREBI_CONFIG_HOME` to `~/.config/komorebi` (in full windows path)
+* Copy autohotkey script from `.config/komorebi` into `KOMOREBI_CONFIG_HOME` path.
+* Create link to following bash script and set `Ctrl + Alt + s` to execute it.
+```bash
+komorebic.exe start
+```
+
+# Alternatively Software
+
+#### Gimp instead of Paint.net
+```powershell
+choco install gimp -y
+```
+or gimp with photoshop-like plugin.
+```powershell
+choco install photogimp -y
+```
+
+#### Chrome instead of Edge
+```powershell
+choco install googlechrome -y
+```
+
+#### Virtualbox instead of Hyper-V
+```powershell
+choco install virtualbox -y --params "/ExtensionPack"
+```
+
+# Extra Note
+<!-- TODO: need to migrate this to wsl --> 
 
 ## PlatformIO Development
 Need to use pip to install only. Refer to python section to install pip.
@@ -192,15 +217,6 @@ choco install keycastow -y
 ## Hard Disk Health Monitor and Benchmark Tools
 ```powershell
 choco install crystaldiskmark crystaldiskinfo -y
-```
-
-# Optional Setup
-## Install scoop
-Some application not available in chocolatey, we can use scoop instead.  
-Install command
-```powershell
-iwr -useb get.scoop.sh | iex
-scoop bucket add extras
 ```
 
 # TODO
