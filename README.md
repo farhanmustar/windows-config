@@ -23,6 +23,7 @@ libreoffice notepadplusplus `
 paint.net inkscape `
 vlc `
 git `
+flameshot `
 powertoys `
 cpu-z hwmonitor windirstat `
 -y
