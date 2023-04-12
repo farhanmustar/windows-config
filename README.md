@@ -78,6 +78,8 @@ pwsh "iwr -useb get.scoop.sh | iex"  # pipe need to be in quote
 ```bash
 sudo apt install build-essential
 ```
+## Fix ls color for windows files.
+Copy `.dircolors` file to wsl home.
 
 # Configure Hyper-V
 Hyper-V is not turn on by default. Enable it:
