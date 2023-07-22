@@ -403,3 +403,39 @@ Then in wsl add environment variable in .bashrc
 ```bash
 export SSH_AUTH_SOCK=/mnt/c/ssh-agent.sock
 ```
+
+
+# Experimental (winget)
+* Microsoft added winget which is a build in package manager preloaded with windows.
+* Noticed this is more like semi auto as the permission popup still require user input.
+```powershell
+winget install wez.wezterm `
+famatech.advancedipscanner `
+microsoft.powertoys `
+logitech.options `
+7zip.7zip `
+flameshot.flameshot `
+notepad++ `
+chocolatey `
+libreoffice `
+videolan.vlc `
+inkscape.inkscape `
+mozilla.firefox `
+nickemanarin.screentogif `
+dotpdnllc.paintdotnet `
+AntibodySoftware.WizTree `
+--disable-interactivity 
+```
+
+
+# Hyper-V for Windows Home
+https://github.com/proviq/AccountManagement/releases
+https://www.makeuseof.com/install-hyper-v-windows-11-home/
+```bat
+pushd "%~dp0"
+dir /b %SystemRoot%\servicing\Packages\*Hyper-V*.mum >hyper-v.txt
+for /f %%i in ('findstr /i . hyper-v.txt 2^>nul') do dism /online /norestart /add-package:"%SystemRoot%\servicing\Packages\%%i"
+del hyper-v.txt
+Dism /online /enable-feature /featurename:Microsoft-Hyper-V -All /LimitAccess /ALL
+pause
+```
