@@ -25,7 +25,7 @@ vlc `
 git `
 flameshot `
 powertoys `
-cpu-z hwmonitor windirstat `
+cpu-z hwmonitor wiztree `
 -y
 ```
 
