@@ -424,6 +424,7 @@ mozilla.firefox `
 nickemanarin.screentogif `
 dotpdnllc.paintdotnet `
 AntibodySoftware.WizTree `
+kde.kdenlive `
 --disable-interactivity 
 ```
 
