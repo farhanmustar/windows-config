@@ -425,6 +425,7 @@ nickemanarin.screentogif `
 dotpdnllc.paintdotnet `
 AntibodySoftware.WizTree `
 kde.kdenlive `
+obsproject.obsstudio `
 --disable-interactivity 
 ```
 
