@@ -179,9 +179,9 @@ keybindings:
 
   # Focus the next/previous workspace defined in `workspaces` config.
   - command: "focus workspace next"
-    binding: "Ctrl+Alt+J"
+    bindings: ["Ctrl+Alt+J", "Ctrl+LWin+J"]
   - command: "focus workspace prev"
-    binding: "Ctrl+Alt+K"
+    bindings: ["Ctrl+Alt+K", "Ctrl+LWin+K"]
 
   # Change focus to a workspace defined in `workspaces` config.
   - command: "focus workspace 1"
