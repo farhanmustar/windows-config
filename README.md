@@ -426,6 +426,8 @@ dotpdnllc.paintdotnet `
 AntibodySoftware.WizTree `
 kde.kdenlive `
 obsproject.obsstudio `
+techpowerup.gpu-z `
+lars-berger.GlazeWM `
 --disable-interactivity 
 ```
 
