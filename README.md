@@ -427,10 +427,20 @@ AntibodySoftware.WizTree `
 kde.kdenlive `
 obsproject.obsstudio `
 techpowerup.gpu-z `
+techpowerup.gpu-z `
 lars-berger.GlazeWM `
 --disable-interactivity 
 ```
-
+## Extra
+```powershell
+winget install `
+postman.postman `
+handbrake.handbrake `
+--disable-interactivity 
+```
+# TODO:
+pencil project ui design
+gravit designer
 
 # Hyper-V for Windows Home
 https://github.com/proviq/AccountManagement/releases
