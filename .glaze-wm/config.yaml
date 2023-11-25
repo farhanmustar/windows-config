@@ -22,10 +22,10 @@ general:
 
 gaps:
   # Gap between adjacent windows.
-  inner_gap: "20px"
+  inner_gap: "10px"
 
   # Gap between windows and the screen edge.
-  outer_gap: "20px"
+  outer_gap: "10px"
 
 # Highlight active/inactive windows with a colored border.
 # ** Exclusive to Windows 11 due to API limitations.
@@ -80,12 +80,15 @@ workspaces:
   - name: "4"
   - name: "5"
   - name: "6"
+  - name: "7"
+  - name: "8"
+  - name: "9"
 
 window_rules:
   # Task Manager requires admin privileges to manage and should be ignored unless running
   # the WM as admin.
   - command: "ignore"
-    match_process_name: "/Taskmgr|ScreenClippingHost/"
+    match_process_name: "/Taskmgr|ScreenClippingHost|ScreenToGif/"
 
   # Launches system dialogs as floating by default (eg. File Explorer save/open dialog).
   - command: "set floating"
@@ -196,6 +199,12 @@ keybindings:
     binding: "Alt+5"
   - command: "focus workspace 6"
     binding: "Alt+6"
+  - command: "focus workspace 7"
+    binding: "Alt+7"
+  - command: "focus workspace 8"
+    binding: "Alt+8"
+  - command: "focus workspace 9"
+    binding: "Alt+9"
 
   # Move focused workspace to a monitor in a given direction.
   - command: "move workspace left"
@@ -220,3 +229,9 @@ keybindings:
     binding: "Alt+Shift+5"
   - commands: ["move to workspace 6", "focus workspace 6"]
     binding: "Alt+Shift+6"
+  - commands: ["move to workspace 7", "focus workspace 7"]
+    binding: "Alt+Shift+7"
+  - commands: ["move to workspace 8", "focus workspace 8"]
+    binding: "Alt+Shift+8"
+  - commands: ["move to workspace 9", "focus workspace 9"]
+    bindings: ["Alt+Shift+9"]
