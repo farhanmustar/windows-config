@@ -22,7 +22,7 @@ general:
 
 gaps:
   # Gap between adjacent windows.
-  inner_gap: "10px"
+  inner_gap: "5px"
 
   # Gap between windows and the screen edge.
   outer_gap: "10px"
@@ -39,7 +39,7 @@ focus_borders:
     color: "#ff0000"
 
 bar:
-  height: "30px"
+  height: "25px"
   position: "top"
   opacity: 0.7
   background: "#20242cc4"
@@ -58,16 +58,28 @@ bar:
   components_center:
     - type: "window title"
   components_right:
+    - type: "cpu"
+      label: "🤖 {percent_usage}%  "
+      refresh_interval_ms: 1000
+    - type: "memory"
+      label: "📂 {percent_usage}%  "
+      refresh_interval_ms: 1000
+    - type: "volume"
+      label_low: "🔉{volume_level}%"
+      label_medium: "🔉{volume_level}%"
+      label_high: "🔊{volume_level}%"
+      label_mute: "🔇{volume_level}%"
     - type: "tiling direction"
       label_horizontal: ">"
       label_vertical: "V"
-      background: "#ffffff33"
       margin: "0 4px"
       padding: "0 8px"
     - type: "binding mode"
       background: "#ffffff33"
       margin: "0 4px 0 0"
       padding: "0 8px"
+    - type: "clock"
+      time_formatting: "hh:mm tt  ddd  dd/MM/yyyy"
 
 workspaces:
   # - name: "1"
