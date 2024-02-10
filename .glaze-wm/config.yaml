@@ -197,9 +197,9 @@ keybindings:
     binding: "Alt+Shift+Z"
 
   # Focus the next/previous workspace defined in `workspaces` config.
-  - command: "focus workspace next"
+  - command: "focus workspace monitornext"
     bindings: ["Ctrl+Alt+J", "Ctrl+LWin+J"]
-  - command: "focus workspace prev"
+  - command: "focus workspace monitorprev"
     bindings: ["Ctrl+Alt+K", "Ctrl+LWin+K"]
 
   # Change focus to a workspace defined in `workspaces` config.
