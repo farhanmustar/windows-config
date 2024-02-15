@@ -85,6 +85,7 @@ Copy `.dircolors` file to wsl home.
 Hyper-V is not turn on by default. Enable it:
 * Search and start "Turn Window features on or off"
 * Tick Hyper-V option.
+* !make sure do not use dynamic or expanding hard disk. it will keep growing without shrinking.
 
 ### Optional Workflow Note
 Configure new virtual switch (default switch need to use dhcp for internet and external network)
@@ -452,4 +453,15 @@ for /f %%i in ('findstr /i . hyper-v.txt 2^>nul') do dism /online /norestart /ad
 del hyper-v.txt
 Dism /online /enable-feature /featurename:Microsoft-Hyper-V -All /LimitAccess /ALL
 pause
+```
+
+# GlazeWM Note
+* currently using patched version. Need to compile manually.
+
+## setup waktu solat using script to run every minute
+* run in powershell
+```powershell
+cp ./PowerShell/waktusolat.ps1 $HOME/Documents
+cd $HOME/Documents
+sudo schtasks /create /tn waktusolatTask /tr "powershell -NoLogo -WindowStyle hidden -file C:\waktusolat.ps1" /sc minute /mo 1 /ru System
 ```
