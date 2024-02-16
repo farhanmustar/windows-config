@@ -55,6 +55,8 @@ bar:
       focused_workspace_background: "#ffffff33"
       displayed_workspace_background: "#00000033"
       default_workspace_background: "transparent"
+    - type: "text file"
+      file_path: "C:/waktusolat.txt"
   components_center:
     - type: "window title"
   components_right:
@@ -74,16 +76,19 @@ bar:
       label_power_saver: "🪫{battery_level}%"
       label_charging: "🔌{battery_level}%"
     - type: "tiling direction"
-      label_horizontal: ">"
-      label_vertical: "V"
+      label_horizontal: "⇄"
+      label_vertical: "⇅"
       margin: "0 4px"
       padding: "0 8px"
+      font_size: "18px"
     - type: "binding mode"
       background: "#ffffff33"
       margin: "0 4px 0 0"
       padding: "0 8px"
     - type: "clock"
       time_formatting: "hh:mm tt  ddd  dd/MM/yyyy"
+      background: "#ffffff33"
+      padding: "3 10"
 
 workspaces:
   # - name: "1"
