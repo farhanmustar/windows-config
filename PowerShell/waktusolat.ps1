@@ -7,24 +7,28 @@ if (!$response) {
 
 $data = $response.content | ConvertFrom-Json
 
-$fajr = ([datetime]::ParseExact($data.prayerTime[0].fajr, "HH:mm:ss", $null))
-$dhuhr = ([datetime]::ParseExact($data.prayerTime[0].dhuhr, "HH:mm:ss", $null))
-$asr = ([datetime]::ParseExact($data.prayerTime[0].asr, "HH:mm:ss", $null))
+$subuh = ([datetime]::ParseExact($data.prayerTime[0].fajr, "HH:mm:ss", $null))
+$zohor = ([datetime]::ParseExact($data.prayerTime[0].dhuhr, "HH:mm:ss", $null))
+$asar = ([datetime]::ParseExact($data.prayerTime[0].asr, "HH:mm:ss", $null))
 $maghrib = ([datetime]::ParseExact($data.prayerTime[0].maghrib, "HH:mm:ss", $null))
-$isha = ([datetime]::ParseExact($data.prayerTime[0].isha, "HH:mm:ss", $null))
+$isyak = ([datetime]::ParseExact($data.prayerTime[0].isha, "HH:mm:ss", $null))
+
+if (!$subuh) {
+    return
+}
 
 $currentDate = Get-Date
 
-if ($fajr -gt $currentDate) {
-  Set-Content -Path 'C:\waktusolat.txt' -NoNewline -value "    🕌 $($fajr.ToString('hh:mm tt')) (Subuh)"
-} elseif ($dhuhr -gt $currentDate) {
-  Set-Content -Path 'C:\waktusolat.txt' -NoNewline -value "    🕌 $($dhuhr.ToString('hh:mm tt')) (Zohor)"
-} elseif ($asr -gt $currentDate) {
-  Set-Content -Path 'C:\waktusolat.txt' -NoNewline -value "    🕌 Asar  :  $($asr.ToString('hh:mm tt'))"
+if ($subuh -gt $currentDate) {
+  Set-Content -Path 'C:\waktusolat.txt' -NoNewline -Force -Value "    🕌 $($subuh.ToString('hh:mm tt')) (Subuh)"
+} elseif ($zohor -gt $currentDate) {
+  Set-Content -Path 'C:\waktusolat.txt' -NoNewline -Force -Value "    🕌 $($zohor.ToString('hh:mm tt')) (Zohor)"
+} elseif ($asar -gt $currentDate) {
+  Set-Content -Path 'C:\waktusolat.txt' -NoNewline -Force -Value "    🕌 Asar  :  $($asar.ToString('hh:mm tt'))"
 } elseif ($maghrib -gt $currentDate) {
-  Set-Content -Path 'C:\waktusolat.txt' -NoNewline -value "    🕌 Maghrib  :  $($maghrib.ToString('hh:mm tt'))"
-} elseif ($isha -gt $currentDate) {
-  Set-Content -Path 'C:\waktusolat.txt' -NoNewline -value "    🕌 Isyak  :  $($isha.ToString('hh:mm tt'))"
-} else {
-  Set-Content -Path 'C:\waktusolat.txt' -NoNewline -Value ''
+  Set-Content -Path 'C:\waktusolat.txt' -NoNewline -Force -Value "    🕌 Maghrib  :  $($maghrib.ToString('hh:mm tt'))"
+} elseif ($isyak -gt $currentDate) {
+  Set-Content -Path 'C:\waktusolat.txt' -NoNewline -Force -Value "    🕌 Isyak  :  $($isyak.ToString('hh:mm tt'))"
+} elseif ($currentDate -gt $isyak) {
+  Set-Content -Path 'C:\waktusolat.txt' -NoNewline -Force -Value "    🕌 $($subuh.ToString('hh:mm tt')) (Subuh)"
 }
