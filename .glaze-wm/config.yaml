@@ -57,6 +57,12 @@ bar:
       default_workspace_background: "transparent"
     - type: "text file"
       file_path: "C:/waktusolat.txt"
+    - type: "music"
+      label_not_playing: ""
+      label_paused: "      🎵 {song_title} - {artist_name}"
+      label_playing: "      🎵 {song_title} - {artist_name}"
+      max_title_length: 50
+      max_artist_length: 50
   components_center:
     - type: "window title"
   components_right:
@@ -109,7 +115,7 @@ window_rules:
   # Task Manager requires admin privileges to manage and should be ignored unless running
   # the WM as admin.
   - command: "ignore"
-    match_process_name: "/Taskmgr|ScreenClippingHost|ScreenToGif|SnippingTool|mmc|WizTree64|msrdc/"
+    match_process_name: "/Taskmgr|ScreenClippingHost|ScreenToGif|SnippingTool|mmc|WizTree64|msrdc|regedit|keyviz/"
 
   # Launches system dialogs as floating by default (eg. File Explorer save/open dialog).
   - command: "set floating"
@@ -178,10 +184,6 @@ keybindings:
   # Close focused window.
   - command: "close"
     binding: "Alt+Shift+Q"
-
-  # Kill GlazeWM process safely.
-  - command: "exit wm"
-    binding: "Alt+Shift+E"
 
   # Re-evaluate configuration file.
   - command: "reload config"

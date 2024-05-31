@@ -437,6 +437,7 @@ lars-berger.GlazeWM `
 winget install `
 postman.postman `
 handbrake.handbrake `
+mulaRahul.Keyviz `
 --disable-interactivity 
 ```
 # TODO:
