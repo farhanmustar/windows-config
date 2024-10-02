@@ -223,6 +223,11 @@ choco install keycastow -y
 choco install crystaldiskmark crystaldiskinfo -y
 ```
 
+## Iso editing tools
+```powershell
+winget install anyburn rufus
+```
+
 # TODO
 
 ## Explore Powershell Galery
