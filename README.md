@@ -228,6 +228,16 @@ choco install crystaldiskmark crystaldiskinfo -y
 winget install anyburn rufus
 ```
 
+## VNC client
+```powershell
+winget install tigervnc
+```
+on ubuntu to run vnc server do this
+```bash
+sudo apt install x11vnc
+sudo -u guiuser bash -c "x11vnc -forever -nopw -display :0"
+```
+
 # TODO
 
 ## Explore Powershell Galery
