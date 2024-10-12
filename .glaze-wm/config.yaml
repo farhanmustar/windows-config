@@ -115,7 +115,7 @@ window_rules:
   # Task Manager requires admin privileges to manage and should be ignored unless running
   # the WM as admin.
   - command: "ignore"
-    match_process_name: "/Taskmgr|ScreenClippingHost|ScreenToGif|SnippingTool|mmc|WizTree64|msrdc|regedit|keyviz/"
+    match_process_name: "/Taskmgr|ScreenClippingHost|ScreenToGif|SnippingTool|mmc|WizTree64|msrdc|regedit|keyviz|vlc|diskpart|blender/"
 
   # Launches system dialogs as floating by default (eg. File Explorer save/open dialog).
   - command: "set floating"
@@ -184,6 +184,10 @@ keybindings:
   # Close focused window.
   - command: "close"
     binding: "Alt+Shift+Q"
+
+  # Kill GlazeWM process safely.
+  # - command: "exit wm"
+  #   binding: "Alt+Shift+E"
 
   # Re-evaluate configuration file.
   - command: "reload config"
