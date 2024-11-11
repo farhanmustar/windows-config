@@ -241,6 +241,29 @@ sudo apt install x11vnc
 sudo -u guiuser bash -c "x11vnc -forever -nopw -display :0"
 ```
 
+## Proxy connection
+* Using tinyproxy installed on ubuntu (wsl)
+```bash
+sudo apt install tinyproxy
+```
+* Tinyproxy default to use port 8888 and listend to all interface so no need to configure.
+* Wsl does not have systemd so we manually run tinyproxy.
+```bash
+sudo tinyproxy -d
+```
+* Port forward the port 8888 to remote server using `-R 8888:localhost:8888`
+* On the remote server we have to configure env variable to use the proxy.
+```bash
+export http_proxy="http://localhost:8888/"
+export ftp_proxy="http://localhost:8888/"
+```
+* For `apt`, it will not use proxy set by env. Instead add the following config.
+* edit `/etc/apt/apt.conf.d/99proxy.conf`
+```bash
+Acquire::http::Proxy "http://localhost:8888";
+Acquire::https::Proxy "http://localhost:8888";
+```
+
 # TODO
 
 ## Explore Powershell Galery
