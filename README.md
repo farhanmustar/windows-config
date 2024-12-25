@@ -471,6 +471,7 @@ obsproject.obsstudio `
 techpowerup.gpu-z `
 techpowerup.gpu-z `
 lars-berger.GlazeWM `
+CPUID.HWMonitor `
 --disable-interactivity 
 ```
 ## Extra
