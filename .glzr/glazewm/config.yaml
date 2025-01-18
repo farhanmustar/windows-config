@@ -2,7 +2,10 @@ general:
   # Commands to run when the WM has started. This is useful for running a
   # script or launching another application.
   # Example: The below command launches Zebar.
-  startup_commands: ['shell-exec zebar']
+  startup_commands: [
+    'shell-exec zebar',
+    'shell-exec C:\Users\farha\Documents\gat-gwm.exe',
+  ]
 
   # Commands to run just before the WM is shutdown.
   # Example: The below command kills Zebar.
