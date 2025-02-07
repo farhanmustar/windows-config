@@ -250,11 +250,14 @@ keybindings:
     bindings: ['alt+shift+f']
 
   # Focus the next/previous workspace defined in `workspaces` config.
-  # TODO: do monitor next and prev. instead of workspace next prev
   - commands: ['focus --next-workspace-in-monitor']
     bindings: ['ctrl+alt+j', 'ctrl+lwin+j']
   - commands: ['focus --prev-workspace-in-monitor']
     bindings: ['ctrl+alt+k', 'ctrl+lwin+k']
+  - commands: ['focus --direction left']
+    bindings: ['ctrl+alt+h', 'ctrl+lwin+h']
+  - commands: ['focus --direction right']
+    bindings: ['ctrl+alt+l', 'ctrl+lwin+l']
 
   # # Focus the workspace that last had focus.
   # - commands: ['focus --recent-workspace']
