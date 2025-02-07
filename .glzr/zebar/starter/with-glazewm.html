@@ -39,6 +39,7 @@
         battery: { type: 'battery' },
         memory: { type: 'memory' },
         weather: { type: 'weather' },
+        disk: { type: 'disk' },
       });
 
       createRoot(document.getElementById('root')).render(<App />);
@@ -191,6 +192,15 @@
                 <div className="network">
                   {getNetworkIcon(output.network)}
                   {output.network.defaultGateway?.ssid}
+                </div>
+              )}
+
+              {output.disk && (
+                <div className="disk">
+                  <i className="nf nf-md-harddisk"></i>
+                  {output.disk.disks[0].availableSpace.iecValue.toFixed(1)}
+                  &nbsp;
+                  {output.disk.disks[0].availableSpace.iecUnit}
                 </div>
               )}
 
