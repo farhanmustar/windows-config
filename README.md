@@ -83,6 +83,10 @@ sudo apt install build-essential
 ```bash
 export LS_COLORS="$(echo $LS_COLORS)ow=01;34:"
 ```
+## Install wsl utils
+```bash
+sudo apt install wslu
+```
 
 # Configure Hyper-V
 Hyper-V is not turn on by default. Enable it:
