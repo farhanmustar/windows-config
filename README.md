@@ -243,6 +243,7 @@ on ubuntu to run vnc server do this
 ```bash
 sudo apt install x11vnc
 sudo -u guiuser bash -c "x11vnc -forever -nopw -display :0"
+# default port 5900
 ```
 
 ## Proxy connection
@@ -503,7 +504,9 @@ pause
 ```
 
 # GlazeWM Note
-* currently using patched version. Need to compile manually.
+<!-- * currently using patched version. Need to compile manually. -->
+* since version 3.9.0, the active monitor navigation was added.
+    * currently configuration updated for version 3.9.1.
 
 ## setup waktu solat using script to run every minute
 * run in powershell

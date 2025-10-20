@@ -251,9 +251,9 @@ keybindings:
     bindings: ['alt+shift+f']
 
   # Focus the next/previous workspace defined in `workspaces` config.
-  - commands: ['focus --next-workspace-in-monitor']
+  - commands: ['focus --next-active-workspace-on-monitor']
     bindings: ['ctrl+alt+j', 'ctrl+lwin+j']
-  - commands: ['focus --prev-workspace-in-monitor']
+  - commands: ['focus --prev-active-workspace-on-monitor']
     bindings: ['ctrl+alt+k', 'ctrl+lwin+k']
   - commands: ['focus --direction left']
     bindings: ['ctrl+alt+h', 'ctrl+lwin+h']
