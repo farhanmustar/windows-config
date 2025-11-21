@@ -94,6 +94,27 @@ Hyper-V is not turn on by default. Enable it:
 * Tick Hyper-V option.
 * !make sure do not use dynamic or expanding hard disk. it will keep growing without shrinking.
 
+### Hyper-V disk management
+* To successfully shrink the disk, we need to zeroout all deleted items. on linux run.
+```bash
+sudo fstrim -v /
+```
+* Alternatively if still not working, create large file of zeros then delete them.
+```bash
+sudo dd if=/dev/zero of=/tmp/zero.file bs=1M # stop when you run out of space. this does not take host disk space.
+sudo rm /tmp/zero.file
+```
+* Shrink the vhdx using following powershell cmdlet.
+```powershell
+Optimize-VHD -Path c:\test\dynamic.vhdx -Mode Full
+```
+* do not use `Resize-VHD`, this will corrupt your partition table.
+    * to recover incase you corrupt it, do following.
+        * boot using live gparted image.
+        * open terminal and use `testdisk`.
+        * properly select the partition type and try write the partition back.
+        * double check the `/etc/fstab` for partition uuid. (get partion uuid using gparted). (by right no change)
+
 ### Optional Workflow Note
 Configure new virtual switch (default switch need to use dhcp for internet and external network)
 * Open Hyper-V Manager after reboot.
