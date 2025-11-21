@@ -523,16 +523,3 @@ del hyper-v.txt
 Dism /online /enable-feature /featurename:Microsoft-Hyper-V -All /LimitAccess /ALL
 pause
 ```
-
-# GlazeWM Note
-<!-- * currently using patched version. Need to compile manually. -->
-* since version 3.9.0, the active monitor navigation was added.
-    * currently configuration updated for version 3.9.1.
-
-## setup waktu solat using script to run every minute
-* run in powershell
-```powershell
-cp ./PowerShell/waktusolat.ps1 $HOME/Documents
-cd $HOME/Documents
-sudo schtasks /create /tn waktusolatTask /tr "powershell -NoLogo -WindowStyle hidden -file C:\waktusolat.ps1" /sc minute /mo 1 /ru System
-```
