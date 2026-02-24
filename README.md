@@ -1,48 +1,42 @@
-# Windows configuration guide
-Make sure all run in admin powershell
-
-## Chocolatey Package Manager
-Install chocolatey from [chocolatey.org](https://chocolatey.org/install).
-```powershell
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-```
+# Install app using winget
 
 ## Recommended Package to Install
-install all other software using chocolatey
+* Noticed this is more like semi auto as the permission popup still require user input.
 ```powershell
-choco install `
-postman `
-free-download-manager `
-psutils `
-wezterm `
-rclone `
-vcxsrv `
-filezilla dbeaver 7zip `
-advanced-ip-scanner wireshark `
-libreoffice notepadplusplus `
-paint.net inkscape `
-vlc `
-git `
-flameshot `
-powertoys `
-cpu-z hwmonitor wiztree `
--y
+winget install wez.wezterm `
+famatech.advancedipscanner `
+microsoft.powertoys `
+logitech.options `
+7zip.7zip `
+flameshot.flameshot `
+notepad++ `
+TheDocumentFoundation.LibreOffice `
+videolan.vlc `
+inkscape.inkscape `
+mozilla.firefox `
+nickemanarin.screentogif `
+dotPDN.PaintDotNet `
+AntibodySoftware.WizTree `
+kde.kdenlive `
+obsproject.obsstudio `
+techpowerup.gpu-z `
+glzr-io.glazewm `
+CPUID.HWMonitor `
+CPUID.CPU-Z `
+DBeaver.DBeaver.Community `
+WiresharkFoundation.Wireshark `
+Git.Git `
+--disable-interactivity 
+```
+
+## Still missing in winget
+* originally from chocolatey.
+```powershell
+filezilla psutils
 ```
 
 ### Note on sudo
 ```sudo``` keyword is available after installing psutils, which is included in the above install command.
-Users can now install using chocolatey without admin enabled powershell as shown below.
-```powershell
-sudo choco install <software_name>
-```
-
-## Install scoop
-Some application not available in chocolatey, we can use scoop instead.  
-Install command
-```powershell
-iwr -useb get.scoop.sh | iex
-scoop bucket add extras
-```
 
 # WSL configuration
 ## Install default (ubuntu) distribution
@@ -150,19 +144,9 @@ install extension
   - dark reader
       - configure dark reader shortcut to ctrl+shift+d
   - js error notify
-  - free download manager for chrome
 
-# Install Tiling Window Management (Komorebi)
-```bash
-scoop install komorebi
-scoop install autohotkey
-```
-* Set environment variable `KOMOREBI_CONFIG_HOME` to `~/.config/komorebi` (in full windows path)
-* Copy autohotkey script from `.config/komorebi` into `KOMOREBI_CONFIG_HOME` path.
-* Create link to following bash script and set `Ctrl + Alt + s` to execute it.
-```bash
-komorebic.exe start
-```
+# Install Tiling Window Management (GlazeWM)
+* copy the glazewm config to path.
 
 # Alternatively Software
 
@@ -253,7 +237,7 @@ choco install crystaldiskmark crystaldiskinfo -y
 
 ## Iso editing tools
 ```powershell
-winget install anyburn rufus
+winget install PowerSoftware.AnyBurn Rufus.Rufus
 ```
 
 ## VNC client
@@ -318,9 +302,11 @@ Set-ExecutionPolicy remotesigned
 ```
 
 ## Install Scripts
-copy content of ```./scripts``` to ```/ProgramData/Chocolatey/bin```
+copy content of ```./scripts``` to ```.local/bin/```
+* TODO: add .local/bin to PATH.
 
 ## Recommended Package to Install
+* TODO: filter and conver to winget.
 install all other software using chocolatey
 ```powershell
 choco install `
@@ -344,16 +330,7 @@ watchexec -- node .\index.js
 ```
 TIPS: for nodejs use ```console.clear()``` inside index.js to clear console log before print new stuff.
 
-## Configure NeoVim
-To ensure consistent configuration path with linux,
-* set XDG_CONFIG_HOME to ```C:\Users\<username>\.config``` in user env variable.
-
-To use Nightly NeoVim.
-```powershell
-choco update neovim --pre
-```
-
-### Share clipboard with remote server through ssh with putty
+### Share clipboard with remote server through ssh with putty (no need for wsl)
 * On server, install xclip. For example, in ubuntu:
 ```bash
 apt install xclip
@@ -472,34 +449,6 @@ Then in wsl add environment variable in .bashrc
 export SSH_AUTH_SOCK=/mnt/c/ssh-agent.sock
 ```
 
-
-# Experimental (winget)
-* Microsoft added winget which is a build in package manager preloaded with windows.
-* Noticed this is more like semi auto as the permission popup still require user input.
-```powershell
-winget install wez.wezterm `
-famatech.advancedipscanner `
-microsoft.powertoys `
-logitech.options `
-7zip.7zip `
-flameshot.flameshot `
-notepad++ `
-chocolatey `
-libreoffice `
-videolan.vlc `
-inkscape.inkscape `
-mozilla.firefox `
-nickemanarin.screentogif `
-dotpdnllc.paintdotnet `
-AntibodySoftware.WizTree `
-kde.kdenlive `
-obsproject.obsstudio `
-techpowerup.gpu-z `
-techpowerup.gpu-z `
-lars-berger.GlazeWM `
-CPUID.HWMonitor `
---disable-interactivity 
-```
 ## Extra
 ```powershell
 winget install `
