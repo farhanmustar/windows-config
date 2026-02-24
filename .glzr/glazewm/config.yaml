@@ -4,7 +4,7 @@ general:
   # Example: The below command launches Zebar.
   startup_commands: [
     'shell-exec zebar',
-    'shell-exec C:\Users\farha\Documents\gat-gwm.exe',
+    'shell-exec C:\Users\farha\.glzr\gat-gwm.exe',
   ]
 
   # Commands to run just before the WM is shutdown.
