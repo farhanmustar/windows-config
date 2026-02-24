@@ -523,3 +523,8 @@ del hyper-v.txt
 Dism /online /enable-feature /featurename:Microsoft-Hyper-V -All /LimitAccess /ALL
 pause
 ```
+then run as admin
+if still not working run this in admin cmdprompt.
+```bat
+<code>DISM /Online /Enable-Feature /All /FeatureName:Microsoft-Hyper-V
+```
