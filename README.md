@@ -1,7 +1,7 @@
 # Install app using winget
 
 ## Recommended Package to Install
-* Noticed this is more like semi auto as the permission popup still require user input.
+* Noticed this is more like semi auto as the permission popup still require user input. (*try run in admin powershell)
 ```powershell
 winget install wez.wezterm `
 famatech.advancedipscanner `
@@ -9,12 +9,13 @@ microsoft.powertoys `
 logitech.options `
 7zip.7zip `
 flameshot.flameshot `
-notepad++ `
+Notepad++.Notepad++ `
 TheDocumentFoundation.LibreOffice `
 videolan.vlc `
 inkscape.inkscape `
 mozilla.firefox `
 nickemanarin.screentogif `
+WinSCP.WinSCP `
 dotPDN.PaintDotNet `
 AntibodySoftware.WizTree `
 kde.kdenlive `
@@ -29,15 +30,6 @@ Git.Git `
 --disable-interactivity 
 ```
 
-## Still missing in winget
-* originally from chocolatey.
-```powershell
-filezilla psutils
-```
-
-### Note on sudo
-```sudo``` keyword is available after installing psutils, which is included in the above install command.
-
 # WSL configuration
 ## Install default (ubuntu) distribution
 ```powershell
@@ -48,7 +40,7 @@ wsl --install
 * copy file from ```wsl/wsl.conf``` to ```/etc/wsl.conf```
 * shutdown wsl to allow it to reload config.
 ```powershell
-wsl --shutdown
+wsl.exe --shutdown
 ```
 ## Passthrough host cmd in wsl
 ```bash
@@ -64,7 +56,7 @@ alias pwsh='powershell -Command'
 ```
 This allow for executing powershell cmd such as chocolatey install
 ```bash
-pwsh sudo choco install ...
+# pwsh sudo choco install ...
 pwsh Get-VM
 pwsh "iwr -useb get.scoop.sh | iex"  # pipe need to be in quote 
 ```
@@ -76,10 +68,6 @@ sudo apt install build-essential
 * copy this into `~/.bashrc`.
 ```bash
 export LS_COLORS="$(echo $LS_COLORS)ow=01;34:"
-```
-## Install wsl utils
-```bash
-sudo apt install wslu
 ```
 
 # Configure Hyper-V
@@ -274,19 +262,76 @@ Acquire::http::Proxy "http://localhost:8888";
 Acquire::https::Proxy "http://localhost:8888";
 ```
 
+## Configure Keyboard Shortcut.
+Configure putty shortcut to be <!-- ctrl + alt + r --> <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>r</kbd>
+
+Configure windows terminal shortcut to be <!-- ctrl + alt + t --> <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>t</kbd>
+
+* open run <!-- window + r --> <kbd>window</kbd> + <kbd>r</kbd>
+* run this ```shell:AppsFolder```
+* create shortcut for windows terminal at ```C:\ProgramData\Microsoft\Windows\Start Menu\Programs```
+* right click properties and add keyboard shortcut.
+
+## Configure Putty
+putty use register to store settings. Double click on ```./putty/putty.reg``` then accept importing the register.
+
+configure shortcut for pagent to pass private key,   
+just add path of the key in quote after the pagent url.
+
+configure vcxsrv. then save the config to document folder. (xserver.xlaunch)
+
+## Extra
+```powershell
+winget install `
+postman.postman `
+handbrake.handbrake `
+mulaRahul.Keyviz `
+--disable-interactivity 
+```
+# TODO:
+pencil project ui design
+gravit designer
+
+# Hyper-V for Windows Home
+https://github.com/proviq/AccountManagement/releases
+https://www.makeuseof.com/install-hyper-v-windows-11-home/
+```bat
+pushd "%~dp0"
+dir /b %SystemRoot%\servicing\Packages\*Hyper-V*.mum >hyper-v.txt
+for /f %%i in ('findstr /i . hyper-v.txt 2^>nul') do dism /online /norestart /add-package:"%SystemRoot%\servicing\Packages\%%i"
+del hyper-v.txt
+Dism /online /enable-feature /featurename:Microsoft-Hyper-V -All /LimitAccess /ALL
+pause
+```
+then run as admin
+if still not working run this in admin cmdprompt.
+```bat
+<code>DISM /Online /Enable-Feature /All /FeatureName:Microsoft-Hyper-V
+```
+
 # TODO
 
-## Explore Powershell Galery
-Powershell got its own build in module manager. Need to explore, as for now the package available is very limited.
-```
-https://www.powershellgallery.com/packages
+## Explore wslpath with explorer.
+* wslpath can convert path to windows format.
+
+## Explore openlink for fugitive open link
+```bash
+pwsh start https://google.com
 ```
 
-## Explore Windows Package Manager
-Windows package manager.
-```
-https://docs.microsoft.com/en-gb/windows/package-manager/
-```
+<!-- ## Explore Powershell Galery -->
+<!-- Powershell got its own build in module manager. Need to explore, as for now the package available is very limited. -->
+<!-- ``` -->
+<!-- https://www.powershellgallery.com/packages -->
+<!-- ``` -->
+
+<!-- ## Explore Windows Package Manager -->
+<!-- Windows package manager. -->
+<!-- ``` -->
+<!-- https://docs.microsoft.com/en-gb/windows/package-manager/ -->
+<!-- ``` -->
+
+---
 
 # Abandon Note
 Note that are not relevant anymore.
@@ -300,6 +345,16 @@ set script execution policy to remotesigned
 ```powershell
 Set-ExecutionPolicy remotesigned
 ```
+
+## Still missing in winget
+* originally from chocolatey.
+```powershell
+filezilla # replaced with winSCP
+psutils # specific for powershell https://github.com/lukesampson/psutils
+```
+
+### Note on sudo
+```sudo``` keyword is available after installing psutils, which is included in the above install command.
 
 ## Install Scripts
 copy content of ```./scripts``` to ```.local/bin/```
@@ -344,24 +399,6 @@ export DISPLAY=localhost:10.0
 ```bash
 xclock
 ```
-
-## Configure Keyboard Shortcut.
-Configure putty shortcut to be <!-- ctrl + alt + r --> <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>r</kbd>
-
-Configure windows terminal shortcut to be <!-- ctrl + alt + t --> <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>t</kbd>
-
-* open run <!-- window + r --> <kbd>window</kbd> + <kbd>r</kbd>
-* run this ```shell:AppsFolder```
-* create shortcut for windows terminal at ```C:\ProgramData\Microsoft\Windows\Start Menu\Programs```
-* right click properties and add keyboard shortcut.
-
-## Configure Putty
-putty use register to store settings. Double click on ```./putty/putty.reg``` then accept importing the register.
-
-configure shortcut for pagent to pass private key,   
-just add path of the key in quote after the pagent url.
-
-configure Xlaunch. then save the config to document folder. (xserver.xlaunch)
 
 ## Configure Vim
 Clone dotfiles repo at https://github.com/farhanmustar/dotfiles.git.
@@ -449,31 +486,7 @@ Then in wsl add environment variable in .bashrc
 export SSH_AUTH_SOCK=/mnt/c/ssh-agent.sock
 ```
 
-## Extra
-```powershell
-winget install `
-postman.postman `
-handbrake.handbrake `
-mulaRahul.Keyviz `
---disable-interactivity 
-```
-# TODO:
-pencil project ui design
-gravit designer
-
-# Hyper-V for Windows Home
-https://github.com/proviq/AccountManagement/releases
-https://www.makeuseof.com/install-hyper-v-windows-11-home/
-```bat
-pushd "%~dp0"
-dir /b %SystemRoot%\servicing\Packages\*Hyper-V*.mum >hyper-v.txt
-for /f %%i in ('findstr /i . hyper-v.txt 2^>nul') do dism /online /norestart /add-package:"%SystemRoot%\servicing\Packages\%%i"
-del hyper-v.txt
-Dism /online /enable-feature /featurename:Microsoft-Hyper-V -All /LimitAccess /ALL
-pause
-```
-then run as admin
-if still not working run this in admin cmdprompt.
-```bat
-<code>DISM /Online /Enable-Feature /All /FeatureName:Microsoft-Hyper-V
+## Install wsl utils
+```bash
+sudo apt install wslu
 ```
