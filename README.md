@@ -49,6 +49,11 @@ sudo ln -sT /mnt/c/Windows/System32/wsl.exe /usr/bin/wsl
 sudo ln -sT /mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe /usr/bin/powershell
 sudo ln -sT /mnt/c/Windows/System32/clip.exe /usr/bin/clip
 ```
+## Add user in Hyper-V Admin group
+```powershell
+# run in admin powershell
+Add-LocalGroupMember -Group "Hyper-V Administrators" -Member $env:USERNAME
+```
 ## Execute powershell from wsl bash
 Add following to bash_alias.
 ```bash
